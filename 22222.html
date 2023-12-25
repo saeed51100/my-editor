@@ -1,1631 +1,303 @@
-<!-- wp:spacer {"height":"63px"} -->
-<div class="wp-block-spacer" style="height: 63px;" aria-hidden="true"> </div>
+<div dir="rtl" style="text-align: justify;"><strong><span class="colored-text">      XAMPP </span></strong>عنوانی است که به بسته نرم افزاری شامل وب سرور آپاچی ، سیستم مدیریت پایگاه داده رابطه ای Mysql ( یا MariaDB ) و زبان برنامه نویسی PHP داده می شود.</div>
+<!-- wp:spacer {"height":"62px"} -->
+<div class="wp-block-spacer" style="height: 62px;" aria-hidden="true"> </div>
 <!-- /wp:spacer -->
-<p dir="rtl" style="text-align: justify;">      برای یادگیری یک زبان برنامه نویسی بهترین راه انجام پروژه های عملی و کاربردی است. با انجام تمرین شما با ساختار یک زبان آشنا می شوید. از حلقه ها ، عبارات شرطی و عبارات منطقی استفاده می کنید. متغیرها و آرایه ها را به کار می گیرید و در هنگام بروز خطا و ارورها برای راه حل در گوگل جستجو کرده و به دانش و مهارت خود می افزایید.</p>
-<p dir="rtl" style="text-align: justify;">     در این پست و دو پست بعدی ۳۲ تمرین PHP را از سایت Codewars.com با هم مرور می کنیم. Codewars.com یکی از سایت های تمرین برنامه نویسی است که می توانید با انتخاب زبان برنامه نویسی خود تمرینات آن را انجام دهید.</p>
-<p dir="rtl" style="text-align: justify;">      برای اجرای برنامه های php باید از یک سرور که php روی آن نصب است استفاده کنیم و از آنجا که هدف ما فعلاً تمرین است و نیازی به هزینه جهت سرور واقعی نداریم ، می توانیم یک سرور مجازی روی کامپیوتر خود راه اندازی کرده و برنامه های php را روی آن Run نماییم.</p>
-<p dir="rtl" style="text-align: justify;">      اگر از سیستم عامل ویندوز استفاده می کنید می توانید برنامه <a href="https://raiatec.com/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-%d9%86%d8%b5%d8%a8-xampp-%d8%af%d8%b1-%d9%88%db%8c%d9%86%d8%af%d9%88%d8%b2-10/"> <strong><span class="colored-text">XAMPP</span></strong></a> را نصب کرده و اگر از لینوکس استفاده می کنید <a href="https://raiatec.com/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-%d9%86%d8%b5%d8%a8-lamp-%d8%af%d8%b1-%d8%a7%d9%88%d8%a8%d9%88%d9%86%d8%aa%d9%88-20-04/"> <strong><span class="colored-text">LAMP</span></strong></a> را نصب نمایید.</p>
-<p dir="rtl">برای معرفی توابع از سایت <a href="https://www.w3schools.com/php/"><strong>w3schools.com</strong></a> استفاده شده است.</p>
-<!-- wp:spacer -->
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<!-- /wp:spacer -->
-
-<!-- wp:html -->
-<p dir="rtl" style="text-align: justify;">قبل از حل تمرینات زیر آموزش PHP را مطالعه نمایید:</p>
-<!-- /wp:html -->
-
-<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#0faf97"},"border":{"radius":"8px"}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-background wp-element-button" style="border-radius: 8px; background-color: #0faf97;" href="https://raiatec.com/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-php-%d9%82%d8%b3%d9%85%d8%aa-%d8%a7%d9%88%d9%84/">آموزش PHP قسمت اول</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons -->
-
-<!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
-<!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":4} -->
-<h3 class="wp-block-heading has-text-align-right"><span class="colored-text">۱. تابعی بنویسید که یک عدد را بگیرد و کاراکتر ASCII مربوطه را برای آن مقدار برگرداند.</span></h3>
-<!-- /wp:heading -->
-<p dir="rtl" style="text-align: justify;"><span class="colored-text"> <span style="font-size: revert;">مثال:     </span> get_char(65) # =&gt; 'A' </span></p>
-
-<!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
-<!-- /wp:spacer -->
-
-<p dir="rtl"><strong>پاسخ:</strong></p>
-<p dir="rtl">      php یک تابع آماده برای این کار دارد و نیازی به نوشتن تابع جدید نیست.</p>
-<p dir="rtl">تابع <strong><span class="colored-text">()chr</span></strong> یک عدد بین ۰ و ۲۵۵ به عنوان ورودی می گیرد و کاراکتر اسکی متناظر آن را بر می گرداند:</p>
-<p dir="rtl" style="text-align: justify;"> </p>
-<!-- wp:html -->
-<pre style="direction: ltr;">&lt;?php
-echo chr(75);</pre>
-<!-- /wp:html -->
-
-<!-- wp:html -->
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p class="has-white-background-color has-background"><strong>K</strong></p>
-</div>
-</div>
-<!-- /wp:html -->
-<p dir="rtl" style="text-align: justify;">      دستور <strong><span class="colored-text">echo</span></strong> در <strong>php</strong> برای چاپ خروجی است.</p>
-
-<!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
-<!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":4} -->
-<h3 class="wp-block-heading has-text-align-right"><span class="colored-text">۲. این کد به درستی اجرا نمی شود. سعی کنید دلیل آن را پیدا کنید.</span></h3>
-<!-- /wp:heading -->
-
-<!-- wp:html -->
-<pre style="direction: ltr;">&lt;?php
-function multiply($a, $b) {
-     $a * $b;
-}</pre>
-<!-- /wp:html -->
-
-<!-- wp:spacer -->
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<!-- /wp:spacer -->
-<p dir="rtl" style="text-align: justify;"><strong>پاسخ:</strong></p>
-<p dir="rtl" style="text-align: justify;">      تابع بالا با نام ()multiply قرار است دو عدد را به عنوان ورودی گرفته و حاصلضرب را برگرداند ولی از <strong><span class="colored-text">return</span></strong> استفاده نکرده است. شکل صحیح تابع به صورت زیر است:</p>
-<!-- wp:html -->
-<pre style="direction: ltr;">&lt;?php
-function multiply($a, $b) {
-        return $a * $b;
-    }
-echo multiply(75,4);</pre>
-<!-- /wp:html -->
-
-<!-- wp:html -->
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p class="has-white-background-color has-background"><strong>300</strong></p>
-</div>
-</div>
-<!-- /wp:html -->
-
-<!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
-<!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":4} -->
-<h3 class="wp-block-heading has-text-align-right"><span class="colored-text">۳. تابعی بنویسید که دو تاریخ را گرفته و اختلاف آنها را برگرداند.</span></h3>
-<!-- /wp:heading -->
-<p dir="rtl" style="text-align: justify;">      <strong>توضیحات: </strong>تابع ما سه پارامتر خواهد داشت:</p>
+<div dir="rtl">
 <ul>
-<li dir="rtl" style="text-align: justify;">last : تاریخ قدیمی تر </li>
-<li dir="rtl" style="text-align: justify;">today : تاریخ جدید تر</li>
-<li dir="rtl" style="text-align: justify;">cycleLength : یک عدد صحیح که اختلاف دو تاریخ بالا با آن مقایسه می شود.</li>
+<li style="text-align: justify;"><strong><span class="colored-text">X</span></strong> در Xampp نماینده سیستم عامل هایی است که با آن کار می کند یعنی Windows , Linux و Mac OS.</li>
+<li style="text-align: justify;"><strong><span class="colored-text">A</span></strong>pache : سرور وب منبع باز Apache پرکاربردترین سرور در سراسر جهان برای ارائه محتوای وب است. برنامه سرور به عنوان یک نرم افزار رایگان توسط بنیاد نرم افزار آپاچی در دسترس است.</li>
 </ul>
-<p dir="rtl" style="text-align: justify;">تابع ما باید روزهای سپری شده از last تا today را محاسبه کرده و با cycleLength مقایسه کند.</p>
-<!-- wp:spacer -->
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<!-- /wp:spacer -->
-<p dir="rtl" style="text-align: justify;"><strong>پاسخ: </strong>تابع ()periodIsLate را به صورت زیر می نویسیم:</p>
-<!-- wp:html -->
-<pre style="direction: ltr;">&lt;?php
-function periodIsLate($last, $today, $cycleLength)
-{
-   $aaa=date_create($last);
-   $bbb=date_create($today);
-   $mmm=date_diff($aaa, $bbb) -&gt;days;
-if ($mmm&gt;$cycleLength){
-    return 1;
-}
-  echo(periodIsLate("2017-07-18", "2017-07-11", 5));</pre>
-<!-- /wp:html -->
-
-<!-- wp:spacer {"height":"68px"} -->
-<div class="wp-block-spacer" style="height: 68px;" aria-hidden="true"> </div>
-<!-- /wp:spacer -->
-<p dir="rtl" style="text-align: justify;"><strong>فرم خلاصه شده تابع بالا:</strong></p>
-<!-- wp:html -->
-<pre style="direction: ltr;">&lt;?php
-function periodIsLate($last, $today, $cycleLength)
-{
-     return ((date_diff(date_create($today), date_create($last))-&gt;days) &gt; $cycleLength);
-}
-  echo(periodIsLate("2017-07-18", "2017-07-11", 5));</pre>
-<!-- /wp:html -->
-
-<!-- wp:html -->
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p class="has-white-background-color has-background has-medium-font-size">1</p>
+<ul>
+<li style="text-align: justify;"><strong><span class="colored-text">M</span></strong>ySQL/MariaDB: در MySQL، XAMPP شامل یکی از محبوب ترین سیستم های مدیریت پایگاه داده رابطه ای در جهان است. در ترکیب با وب سرور Apache و زبان برنامه نویسی PHP، MySQL ذخیره سازی داده ها را برای خدمات وب ارائه می دهد. نسخه‌های کنونی XAMPP جایگزین MySQL با MariaDB (یک فورک توسعه‌یافته پروژه MySQL، ساخته‌شده توسط توسعه‌دهندگان اصلی) شده‌اند.</li>
+</ul>
+<ul>
+<li style="text-align: justify;"><strong><span class="colored-text">P</span></strong>HP: زبان برنامه نویسی سمت سرور PHP کاربران را قادر می سازد تا وب سایت ها یا برنامه های کاربردی پویا ایجاد کنند. PHP را می توان بر روی تمام پلتفرم ها نصب کرد و از تعدادی سیستم پایگاه داده متنوع پشتیبانی می کند.</li>
+</ul>
+<ul>
+<li>
+<div style="text-align: justify;"><strong><span class="colored-text">P</span></strong>erl: زبان برنامه نویسی Perl در مدیریت سیستم، توسعه وب و برنامه نویسی شبکه استفاده می شود. پرل نیز مانند PHP به کاربران امکان می دهد تا برنامه های وب پویا را برنامه ریزی کنند.</div>
+</li>
+</ul>
+<div style="text-align: justify;">      در کنار این اجزای اصلی، این توزیع رایگان آپاچی حاوی ابزارهای مفید دیگری است که بسته به سیستم عامل شما متفاوت است. این ابزارها عبارتند از سرور ایمیل Mercury، ابزار مدیریت پایگاه داده <strong><span class="colored-text">phpMyAdmin</span></strong>، راه حل های نرم افزار تجزیه و تحلیل وب Webalizer، وOpenSSL و Apache  و Tomcat و سرورهای FTP FileZilla یا ProFTPd.</div>
 </div>
-</div>
-<!-- /wp:html -->
-
-<!-- wp:spacer {"height":"61px"} -->
-<div class="wp-block-spacer" style="height: 61px;" aria-hidden="true"> </div>
-<!-- /wp:spacer -->
-<p dir="rtl" style="text-align: justify;">      در خط 545777 مقادیر رشته ای "18-07-2017" و "11-07-2017" را به عنوان پارامترهای اول و دوم تابع پاس می دهیم. همچنین عدد 5 را به عنوان پارامتر سوم پاس می دهیم.</p>
-<p dir="rtl">      در خط 5115 و 4 تابع <strong><span class="colored-text">()date_create </span></strong>رشته های بالا را به شیء جدید DateTime تبدیل کرده و در متغیرهای aaa$ و bbb$ ذخیره می شوند.</p>
-<p dir="rtl">      در خط 5 تابع <strong><span class="colored-text">()date_diff</span></strong> دو شیء aaa$ و bbb$ را با هم مقایسه کرده و اختلاف را به روز در متغیر mmm$ ذخیره می کند.</p>
-<p dir="rtl">      در خط 7 اگر مقدار متغیر mmm$ بزرگتر از cycleLength ( پارامتر سوم تابع اصلی ) بود مقدار 1 به خروجی تابع می رود.</p>
-<p dir="rtl">    در تابع ()periodIsLate که خودمان نوشتیم از دو تابع <strong><span class="colored-text">()date_create </span></strong>و <strong><span class="colored-text">()date_diff</span></strong> را که از توابع <strong><span class="colored-text">php</span></strong> هستند استفاده کردیم که در ادامه آنها را معرفی می کنیم:</p>
 <!-- wp:spacer -->
 <div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"textAlign":"right","level":3} -->
-<h4 class="wp-block-heading has-text-align-right">معرفی تابع ()date_create : </h4>
+<h4 class="wp-block-heading has-text-align-right"><span class="colored-text">حوزه های کاربرد :</span></h4>
 <!-- /wp:heading -->
-<p dir="rtl">تابع <strong><span class="colored-text">‎date_create()</span></strong>‎ یک شیء جدید DateTime ایجاد می کند.</p>
-<p dir="rtl"><strong>      سینتکس:</strong></p>
+<div dir="rtl" style="text-align: justify;">      یک سرور <strong><span class="colored-text">XAMPP</span> </strong>را می توان با یک فایل اجرایی به سرعت و به راحتی نصب کرد و از آن استفاده کرد و به عنوان یک سیستم تست محلی برای لینوکس، ویندوز، و Mac OS X عمل می کند. بسته نرم افزاری شامل همان اجزایی است که در سرورهای وب رایج یافت می شود. توسعه دهندگان این شانس را دارند که پروژه های خود را به صورت محلی آزمایش کنند و آنها را به راحتی به سرورهای واقعی منتقل کنند. اما <strong><span class="colored-text">XAMPP</span></strong> برای استفاده به عنوان یک سرور عمومی مناسب نیست، زیرا بسیاری از ویژگی‌های ایمنی عمداً برای ساده‌سازی و سرعت بخشیدن به سیستم برای آزمایش کنار گذاشته شده‌اند.</div>
+<!-- wp:spacer -->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
+<!-- /wp:spacer -->
+
+<!-- wp:heading {"textAlign":"right","level":3} -->
+<h4 class="wp-block-heading has-text-align-right"><span class="colored-text">نصب XAMPP :</span></h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      آموزش XAMPP ما شما را در مراحل نصب بسته نرم افزاری در ویندوز راهنمایی می کند. اگر از لینوکس یا Mac OS X استفاده می‌کنید، مراحل ذکر شده در زیر برای فرآیند نصب ممکن است متفاوت باشد.</div>
+<!-- wp:spacer -->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
+<!-- /wp:spacer -->
+
+<!-- wp:heading {"textAlign":"right","level":4,"textColor":"vivid-red"} -->
+<h4 class="wp-block-heading has-text-align-right has-vivid-red-color has-text-color">۱) دانلود:</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      <strong><span class="colored-text">XAMPP</span><br /></strong>نسخه ای است که توسط پروژه غیرانتفاعی Apache Friends در دسترس است. نسخه‌های دارای PHP 8.0، 7.4، یا 8.1 برای دانلود در وب‌سایت <a href="https://www.apachefriends.org/de/download.html">Apache Friends</a> در دسترس هستند.</div>
+<!-- wp:spacer -->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
+<!-- /wp:spacer -->
+
+<!-- wp:heading {"textAlign":"right","level":4,"textColor":"vivid-red"} -->
+<h4 class="wp-block-heading has-text-align-right has-vivid-red-color has-text-color">۲) اجرای فایل exe.</h4>
+<!-- /wp:heading -->
+<div dir="rtl">پس از دانلود بسته نرم افزاری، می توانید با دوبار کلیک کردن روی فایل با انتهای exe، نصب را شروع کنید.</div>
+<!-- wp:spacer -->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
+<!-- /wp:spacer -->
+
+<!-- wp:heading {"textAlign":"right","level":4,"textColor":"vivid-red"} -->
+<h4 class="wp-block-heading has-text-align-right has-vivid-red-color has-text-color">۳) هر گونه نرم افزار آنتی ویروس را غیرفعال کنید</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">از آنجایی که یک برنامه آنتی ویروس فعال می تواند بر روند نصب تأثیر منفی بگذارد، توصیه می شود تا زمانی که تمام اجزای XAMPP با موفقیت نصب شوند، به طور موقت هر نرم افزار آنتی ویروس را متوقف کنید.</div>
+<!-- wp:spacer -->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
+<!-- /wp:spacer -->
+
+<!-- wp:heading {"textAlign":"right","level":4,"textColor":"vivid-red"} -->
+<h4 class="wp-block-heading has-text-align-right has-vivid-red-color has-text-color">۴) UAC را غیر فعال کنید</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      کنترل حساب کاربری (UAC) می‌تواند با نصب XAMPP تداخل داشته باشد زیرا دسترسی نوشتن به درایو C: را محدود می‌کند، بنابراین توصیه می‌کنیم این مورد را نیز در طول مراحل نصب غیرفعال کنید. برای اطلاع از نحوه خاموش کردن UAC خود، به صفحات پشتیبانی Microsoft Windows بروید.</div>
+<div dir="rtl"> </div>
 <!-- wp:html -->
-<pre style="direction: ltr;">date_create(time,timezone);</pre>
+<div style="display: flex; justify-content: center;">
+<div style="width: 600px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/xampp-1.jpg" alt="xampp-1.jpg" /></div>
+</div>
 <!-- /wp:html -->
 
 <!-- wp:spacer -->
 <div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
 <!-- /wp:spacer -->
 
-<!-- wp:paragraph {"align":"right"} -->
-<p class="has-text-align-right"><strong>مثال:</strong></p>
-<!-- /wp:paragraph -->
-
+<!-- wp:heading {"textAlign":"right","level":4,"textColor":"vivid-red"} -->
+<h4 class="wp-block-heading has-text-align-right has-vivid-red-color has-text-color">۵) نصب را شروع کنید</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      پس از اینکه فایل exe را باز کردید (پس از غیرفعال کردن برنامه(های) آنتی ویروس و یادداشت کنترل حساب کاربری، صفحه شروع ویزارد راه اندازی XAMPP باید به طور خودکار ظاهر شود.<br />برای پیکربندی تنظیمات نصب، روی "Next" کلیک کنید.</div>
+<div dir="rtl"> </div>
 <!-- wp:html -->
-<pre style="direction: ltr;">&lt;?php
-$date=date_create("2013-03-15");
-echo date_format($date,"Y/m/d");</pre>
+<div style="display: flex; justify-content: center;">
+<div style="width: 600px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/xampp-2.jpg" alt="xampp-2.jpg" /></div>
+</div>
 <!-- /wp:html -->
 
+<!-- wp:spacer -->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
+<!-- /wp:spacer -->
+
+<!-- wp:heading {"textAlign":"right","level":4,"textColor":"vivid-red"} -->
+<h4 class="wp-block-heading has-text-align-right has-vivid-red-color has-text-color">۶) اجزای نرم افزار را انتخاب کنید</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      در بخش «انتخاب مؤلفه‌ها»، می‌توانید اجزای جداگانه بسته نرم‌افزاری XAMPP را از نصب حذف کنید. اما برای یک سرور تست کامل محلی، توصیه می کنیم با استفاده از تنظیمات استاندارد و تمام اجزای موجود نصب کنید. پس از انتخاب خود، روی "Next" کلیک کنید.</div>
+<div dir="rtl"> </div>
 <!-- wp:html -->
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;">2013/03/15</p>
-</div>
+<div style="display: flex; justify-content: center;">
+<div style="width: 600px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/xampp-3.jpg" alt="xampp-3.jpg" /></div>
 </div>
 <!-- /wp:html -->
-<p dir="rtl" style="text-align: justify;">تابع date_format خروجی را به فرمت مورد نظر ما تولید می کند.</p>
-<!-- wp:spacer {"height":"62px"} -->
-<div class="wp-block-spacer" style="height: 62px;" aria-hidden="true"> </div>
+
+<!-- wp:spacer -->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
 <!-- /wp:spacer -->
 
+<!-- wp:heading {"textAlign":"right","level":4,"textColor":"vivid-red"} -->
+<h4 class="wp-block-heading has-text-align-right has-vivid-red-color has-text-color">۷) دایرکتوری نصب را انتخاب کنید</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      در این مرحله بعدی، شما این انتخاب را دارید که محل نصب بسته نرم افزاری XAMPP را انتخاب کنید. اگر تنظیمات استاندارد را انتخاب کنید، پوشه ای با نام XAMPP در زیر C:\ برای شما ایجاد می شود. پس از انتخاب مکان، روی «Next» کلیک کنید.</div>
+<div dir="rtl"> </div>
+<!-- wp:image {"align":"center","id":6771,"sizeSlug":"full","linkDestination":"none"} -->
+<div style="display: flex; justify-content: center;">
+<div style="width: 600px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/xampp-4.jpg" alt="xampp-4.jpg" /></div>
+</div>
+<!-- /wp:image -->
+
+<!-- wp:spacer -->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
+<!-- /wp:spacer -->
+
+<!-- wp:heading {"textAlign":"right","level":4,"textColor":"vivid-red"} -->
+<h4 class="wp-block-heading has-text-align-right has-vivid-red-color has-text-color">۸) فرآیند نصب را شروع کنید</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      پس از تعیین تمام تنظیمات ذکر شده، برای شروع نصب کلیک کنید. ویزارد راه اندازی کامپوننت های انتخاب شده را باز کرده و نصب می کند و آنها را در دایرکتوری تعیین شده ذخیره می کند. این فرآیند در مجموع می تواند چند دقیقه طول بکشد. با زیر نظر گرفتن نوار بارگذاری سبز رنگ در سط صفحه، می توانید پیشرفت این نصب را دنبال کنید.</div>
+<div dir="rtl"> </div>
 <!-- wp:html -->
-<p dir="rtl" style="text-align: justify;"><strong>مقادیر پارامتر :</strong></p>
-<table style="color: black; border-collapse: collapse; width: 90.119%; height: 56px;">
-<thead>
-<tr style="background-color: #ffadad; border-bottom: 4px solid #706e6e; border-style: solid; height: 23px;">
-<td dir="rtl" style="width: 19.499%; height: 10px; border-left: 2px solid #3b3a3a; text-align: center;"><strong style="color: black;">پارامتر</strong></td>
-<td dir="rtl" style="width: 68.2391%; height: 10px; text-align: center;"><strong style="color: black;">توضیحات</strong></td>
-</tr>
-</thead>
-<tbody>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;">time</td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">اختیاری. رشته تاریخ/زمان را مشخص می کند. NULL زمان فعلی را نشان می دهد</td>
-</tr>
-<tr style="height: 23px; background-color: #dbd7d7;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;">timezone</td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">اختیاری. منطقه زمانی را مشخص می کند. پیش فرض منطقه زمانی فعلی است.</td>
-</tr>
-</tbody>
-</table>
+<div style="display: flex; justify-content: center;">
+<div style="width: 600px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/xampp-6.jpg" alt="xampp-6.jpg" /></div>
+</div>
 <!-- /wp:html -->
 
-<!-- wp:spacer {"height":"71px"} -->
-<div class="wp-block-spacer" style="height: 71px;" aria-hidden="true"> </div>
+<!-- wp:spacer -->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
 <!-- /wp:spacer -->
-<p dir="rtl" style="text-align: justify;"><strong>مثال:</strong></p>
+
+<!-- wp:heading {"textAlign":"right","level":4,"textColor":"vivid-red"} -->
+<h4 class="wp-block-heading has-text-align-right has-vivid-red-color has-text-color">۹) تکمیل نصب</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      هنگامی که همه اجزای بسته بندی و نصب شدند، می توانید با کلیک بر روی "پایان"، ویزارد راه اندازی را ببندید. می توانید تیک کادر مربوطه را بزنید و پس از اتمام مراحل نصب، کنترل پنل XAMPP را باز کنید.</div>
+<div dir="rtl"> </div>
 <!-- wp:html -->
-<pre style="direction: ltr;">&lt;?php
-  print_r(date_create("2017-07-13"));
-</pre>
+<div style="display: flex; justify-content: center;">
+<div style="width: 600px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/xampp-9.jpg" alt="xampp-9.jpg" /></div>
+</div>
 <!-- /wp:html -->
-<p dir="rtl" style="text-align: justify;"><strong>خروجی:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;"><code>
- DateTime Object
-    (
-    [date] =&gt; 2017-07-13 00:00:00.000000
-    [timezone_type] =&gt; 3
-    [timezone] =&gt; Europe/Berlin
-    )
-    </code></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html --></p>
-<p dir="rtl" style="text-align: justify;">بجای <strong>echo</strong> از <strong><span class="colored-text">()print_r</span></strong> استفاده کردیم تا بتوانیم خروجی آبجکت را داشته باشیم.</p>
-<p dir="rtl"><!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":3} --></p>
-<h4 class="wp-block-heading has-text-align-right">معرفی تابع ()date_diff : </h4>
-<p dir="rtl"><!-- /wp:heading --></p>
-<p dir="rtl">تابع <strong><span class="colored-text">()date_diff</span></strong> اختلاف بین دو شیء DateTime را برمی گرداند.</p>
-<p dir="rtl"><strong>      سینتکس:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">date_diff(datetime1, datetime2, absolute)</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"right"} --></p>
-<p class="has-text-align-right"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- /wp:paragraph -->
-
-<!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-$date1=date_create("2013-03-15");
-$date2=date_create("2013-12-12");
-$diff=date_diff($date1,$date2);
-echo $diff-&gt;format("%R%a days");</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;">+272 days</p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html --></p>
-<p dir="rtl" style="text-align: justify;">ابتدا با استفاده از تابع date_create یک رشته را به یک شیء DateTime تبدیل کردیم ، سپس با استفاده از تابع date_diff اختلاف دو تاریخ را برگرداندیم.</p>
-<p dir="rtl"><!-- wp:spacer {"height":"74px"} --></p>
-<div class="wp-block-spacer" style="height: 74px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مقادیر پارامتر :</strong></p>
-<table style="color: black; border-collapse: collapse; width: 90.119%; height: 66px;">
-<thead>
-<tr style="background-color: #ffadad; border-bottom: 4px solid #706e6e; border-style: solid; height: 23px;">
-<td dir="rtl" style="width: 19.499%; height: 23px; border-left: 2px solid #3b3a3a; text-align: center;"><strong style="color: black;">پارامتر</strong></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: center;"><strong style="color: black;">توضیحات</strong></td>
-</tr>
-</thead>
-<tbody>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 10px; text-align: center; border-left: 2px solid #3b3a3a;"><em>datetime1</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 10px; text-align: justify; padding-right: 40px;">اجباری. یک شیء DateTime</td>
-</tr>
-<tr style="height: 23px; background-color: #dbd7d7;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>datetime2</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">اجباری. یک شیء DateTime</td>
-</tr>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 10px; text-align: center; border-left: 2px solid #3b3a3a;">absolute</td>
-<td dir="rtl" style="width: 68.2391%; height: 10px; text-align: justify; padding-right: 40px;">اختیاری. یک مقدار دودویی. TRUE یعنی مقدار اختلاف باید مثبت باشد. پیش فرض = FALSE</td>
-</tr>
-</tbody>
-</table>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-  print_r(date_diff(date_create("2017-07-18"), date_create("2017-07-11")));
-</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer {"height":"63px"} --></p>
-<div class="wp-block-spacer" style="height: 63px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;"><code>
- DateInterval Object
-    (
-    [y] =&gt; 0
-    [m] =&gt; 0
-    [d] =&gt; 7
-    [h] =&gt; 0
-    [i] =&gt; 0
-    [s] =&gt; 0
-    [f] =&gt; 0
-    [weekday] =&gt; 0
-    [weekday_behavior] =&gt; 0
-    [first_last_day_of] =&gt; 0
-    [invert] =&gt; 1
-    [days] =&gt; 7
-    [special_type] =&gt; 0
-    [special_amount] =&gt; 0
-    [have_weekday_relative] =&gt; 0
-    [have_special_relative] =&gt; 0
-    )
-        </code></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:code --></p>
-<p dir="rtl" style="text-align: justify;">      در مثال بالا دیدیم که تابع ()date_diff یک آبجکت یا شیء به ما برمی گرداند که حاوی اطلاعات زیادی است. ولی هدف ما از اجرای ()date_diff در خط هفتم تابع <strong>()periodIsLate</strong> دسترسی به اختلاف دو تاریخ به روز است. پس از <strong><span class="colored-text">days&lt;- </span></strong>استفاده کردیم که از آبجکت فوق تعداد اختلاف روز را به ما بر می گرداند.</p>
-<p dir="rtl">
 
 <!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"textAlign":"right","level":4} --></p>
-<h3 class="wp-block-heading has-text-align-right"><span class="colored-text">۴. تمام علامت های تعجب را از انتهای جمله حذف کنید.</span></h3>
-<p dir="rtl"><!-- /wp:heading --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- wp:code {"backgroundColor":"white"} --></p>
-<pre style="direction: ltr;">    remove("Hi!") === "Hi"
-    remove("Hi!!!") === "Hi"
-    remove("!Hi") === "!Hi"
-    remove("!Hi!") === "!Hi"
-    remove("Hi! Hi!") === "Hi! Hi"
-    remove("Hi") === "Hi"</pre>
-<p dir="rtl"><!-- /wp:code -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>پاسخ: </strong>تابع ()remove را به صورت زیر می نویسیم:</p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-function remove($s)
-{
-    return rtrim($s, '!');
-}
-echo (remove("!hello!!!!"));</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p class="has-white-background-color has-background"><strong>hello!</strong></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":3} --></p>
-<h4 class="wp-block-heading has-text-align-right">معرفی تابع ()rtrim :</h4>
-<p dir="rtl"><!-- /wp:heading --></p>
-<div dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()rtrim</span></strong> فضای خالی یا سایر کاراکترهای از پیش تعریف شده را از سمت راست رشته حذف می کند.</div>
+<!-- wp:heading {"textAlign":"right","level":3,"textColor":"vivid-cyan-blue"} -->
+<h4 class="colored-text">کنترل پنل XAMPP</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      از طریق کنترل پنل XAMPP می توان به کنترل اجزای جداگانه سرور آزمایشی دست یافت. رابط کاربری همه اقدامات را ثبت می کند و به شما امکان می دهد ماژول های جداگانه را شروع یا متوقف کنید. کنترل پنل XAMPP دکمه های مختلفی را نیز به شما ارائه می دهد، از جمله:</div>
 <div dir="rtl"> </div>
-<p dir="rtl"><strong>سینتکس:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">rtrim(string,charlist)</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"right"} --></p>
-<p class="has-text-align-right"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- /wp:paragraph -->
-
-<!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-$str = "Hello World!";
-echo $str . "\n";
-echo rtrim($str,"World!");</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;"><code>
-Hello World!
-Hello
-        </code></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer {"height":"67px"} --></p>
-<div class="wp-block-spacer" style="height: 67px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مقادیر پارامتر :</strong></p>
-<table style="color: black; border-collapse: collapse; width: 95.7145%; height: 70px;">
-<thead>
-<tr style="background-color: #ffadad; border-bottom: 4px solid #706e6e; border-style: solid; height: 23px;">
-<td dir="rtl" style="width: 16.5139%; height: 23px; border-left: 2px solid #3b3a3a; text-align: center;"><strong style="color: black;">پارامتر</strong></td>
-<td dir="rtl" style="width: 85.7541%; height: 23px; text-align: center;"><strong style="color: black;">توضیحات</strong></td>
-</tr>
-</thead>
-<tbody>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 16.5139%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>string</em></td>
-<td style="width: 85.7541%; height: 23px;">
-<div dir="rtl" style="text-align: justify; padding-right: 40px;">ضروری. رشته مورد بررسی را مشخص می کند</div>
-</td>
-</tr>
-<tr style="height: 23px; background-color: #dbd7d7;">
-<td style="width: 16.5139%; height: 24px; text-align: center; border-left: 2px solid #3b3a3a;"><em>charlist</em></td>
-<td dir="rtl" style="width: 85.7541%; height: 24px; text-align: justify; padding-right: 40px;">
-<div style="margin-left: 30px;">اختیاری. مشخص می کند کدام کاراکترها از رشته حذف شوند. در صورت حذف، تمام کاراکترهای زیر حذف می شوند:</div>
 <ul>
-<li>"\0" - NULL</li>
-<li>"\t" - tab</li>
-<li>"\n" - new line</li>
-<li>"\x0B" - vertical tab</li>
-<li>"\r" - carriage return</li>
-<li>" " - ordinary white space</li>
+<li dir="rtl" style="text-align: justify;">
+<div style="text-align: justify;"><strong><span class="colored-text">Config:</span></strong> به شما اجازه می دهد تا XAMPP و همچنین اجزای جداگانه را پیکربندی کنید.</div>
+</li>
+<li dir="rtl" style="text-align: justify;">
+<div style="text-align: justify;"><strong><span class="colored-text">Netstat:</span></strong> تمام فرآیندهای در حال اجرا در رایانه محلی را نشان می دهد.</div>
+</li>
+<li dir="rtl" style="text-align: justify;">
+<div><strong><span class="colored-text">Shell:</span></strong> پوسته یونیکس را باز می کند.</div>
+</li>
+<li dir="rtl" style="text-align: justify;">
+<div><strong><span class="colored-text">Explorer:</span></strong> پوشه XAMPP را در Windows Explorer باز می کند.</div>
+</li>
+<li dir="rtl" style="text-align: justify;">
+<div style="text-align: justify;"><strong><span class="colored-text">Services:</span></strong> تمام سرویس هایی که در حال حاضر در پس زمینه اجرا می شوند را نشان می دهد.</div>
+</li>
+<li dir="rtl" style="text-align: justify;">
+<div style="text-align: justify;"><strong><span class="colored-text">Help:</span></strong> پیوندهایی به انجمن های کاربران ارائه می دهد.</div>
+</li>
+<li dir="rtl" style="text-align: right;">
+<div><strong><span class="colored-text">Quit:</span> </strong>کنترل پنل XAMPP را می بندد.</div>
+</li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p dir="rtl" style="text-align: justify;"> </p>
-<p dir="rtl">تابع <strong><span class="colored-text">()</span><span class="colored-text">ltrim</span> </strong>عملکردی مشابه تابع <strong><span class="colored-text">()rtrim</span> </strong>دارد.</p>
-<p dir="rtl"><!-- /wp:html -->
+<!-- wp:html -->
+<div style="display: flex; justify-content: center;">
+<div style="width: 600px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/xampp-10.jpg" alt="xampp-10.jpg" /></div>
+</div>
+<!-- /wp:html -->
 
 <!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"textAlign":"right","level":4} --></p>
-<h3 class="wp-block-heading has-text-align-right"><span class="colored-text">۵. تبدیل عدد به آرایه اعداد معکوس</span></h3>
-<p dir="rtl"><!-- /wp:heading --></p>
-<div dir="rtl" style="text-align: justify;">یک عدد تصادفی غیر منفی را بگیرید و ارقام این عدد را در یک آرایه به ترتیب معکوس برگردانید.</div>
-<div dir="rtl"> </div>
-<div dir="rtl"><strong>مثال:</strong></div>
-<p dir="rtl"><!-- wp:code {"backgroundColor":"white"} --></p>
-<pre style="direction: ltr;">    348597 =&gt; [7,9,5,8,4,3]
-         0 =&gt; [0]</pre>
-<p dir="rtl"><!-- /wp:code -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>پاسخ:</strong></p>
-<p dir="rtl">      در این تمرین تابع ()digitize را نوشته و در آن از دوتابع <strong> <span class="colored-text">()</span> <span class="colored-text">array_reverse</span> </strong> و <strong> <span class="colored-text">()</span> <span class="colored-text">str_split</span> </strong> استفاده کرده ایم:</p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-function digitize($c)
-{
-    return array_reverse(str_split($c));
-}
-echo "&lt;pre&gt;";
-  print_r(digitize("68457"));
-echo "&lt;/pre&gt;";</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;"><code>
- Array
-    (
-    [0] =&gt; 7
-    [1] =&gt; 5
-    [2] =&gt; 4
-    [3] =&gt; 8
-    [4] =&gt; 6
-    )
-        </code></p>
+<!-- wp:heading {"textAlign":"right","level":3,"textColor":"vivid-cyan-blue"} -->
+<h4 class="colored-text">استارت ماژول ها</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      ماژول‌های مجزا را می‌توان در کنترل پنل XAMPP از طریق دکمه‌های مربوطه در زیر «Actions» راه‌اندازی یا متوقف کرد. می‌توانید ببینید کدام ماژول‌ها راه‌اندازی شده‌اند، زیرا نام آن‌ها به رنگ سبز در زیر عنوان «Module» مشخص شده است.</div>
+<!-- wp:html -->
+<div style="display: flex; justify-content: center;">
+<div style="width: 600px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/xampp-11.jpg" alt="xampp-11.jpg" /></div>
 </div>
-</div>
-<p dir="rtl"><!-- /wp:html --></p>
-<div dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()str_split</span></strong> یک رشته را به یک آرایه تقسیم می کند.<br />تابع <strong><span class="colored-text">()array_reverse</span></strong> یک آرایه را به ترتیب معکوس برمی گرداند.</div>
-<div dir="rtl"> </div>
-<div dir="rtl" style="text-align: justify;">بجای <strong>echo</strong> از <strong> <span class="colored-text">()</span> <span class="colored-text">print_r</span> </strong> استفاده کردیم تا بتوانیم خروجی <strong><span class="colored-text">آرایه</span> </strong>را داشته باشیم.</div>
-<p dir="rtl"><!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":3} --></p>
-<h4 class="wp-block-heading has-text-align-right">معرفی تابع ()str_split :</h4>
-<p dir="rtl"><!-- /wp:heading --></p>
-<div dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">str_split()</span></strong> یک رشته را به یک آرایه تقسیم می کند.</div>
-<div dir="rtl"> </div>
-<div dir="rtl"><strong>سینتکس:</strong></div>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">str_split(string,length)</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"right"} --></p>
-<p class="has-text-align-right"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- /wp:paragraph -->
-
-<!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
- print_r(str_split("Hello"));
-</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;"><code>
- Array
-    (
-    [0] =&gt; H
-    [1] =&gt; e
-    [2] =&gt; l
-    [3] =&gt; l
-    [4] =&gt; o
-    )
-        </code></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer {"height":"64px"} --></p>
-<div class="wp-block-spacer" style="height: 64px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مقادیر پارامتر :</strong></p>
-<table style="color: black; border-collapse: collapse; width: 90.119%; height: 69px;">
-<thead>
-<tr style="background-color: #ffadad; border-bottom: 4px solid #706e6e; border-style: solid; height: 23px;">
-<td dir="rtl" style="width: 19.499%; height: 23px; border-left: 2px solid #3b3a3a; text-align: center;"><strong style="color: black;">پارامتر</strong></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: center;"><strong style="color: black;">توضیحات</strong></td>
-</tr>
-</thead>
-<tbody>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>string</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>ضروری. رشته ای را برای تقسیم مشخص می کند</div>
-</td>
-</tr>
-<tr style="height: 23px; background-color: #dbd7d7;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>length</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>اختیاری.  طول هر عنصر آرایه را مشخص می کند. پیش فرض 1 است</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":3} --></p>
-<h4 class="wp-block-heading has-text-align-right">معرفی تابع ()array_reverse :</h4>
-<p dir="rtl"><!-- /wp:heading --></p>
-<p dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()array_reverse</span></strong> یک آرایه را به ترتیب معکوس برمی گرداند.</p>
-<p dir="rtl"><strong>سینتکس:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">array_reverse(array, preserve)</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"right"} --></p>
-<p class="has-text-align-right"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- /wp:paragraph -->
-
-<!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-$a=array("a"=&gt;"Volvo","b"=&gt;"BMW","c"=&gt;"Toyota");
-print_r(array_reverse($a));
-</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;"><code>
- Array
-    (
-    [c] =&gt; Toyota
-    [b] =&gt; BMW
-    [a] =&gt; Volvo
-    )
-        </code></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer {"height":"72px"} --></p>
-<div class="wp-block-spacer" style="height: 72px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مقادیر پارامتر :</strong></p>
-<table style="color: black; border-collapse: collapse; width: 94.2858%; height: 69px; margin-left: 50px;">
-<thead>
-<tr style="background-color: #ffadad; border-bottom: 4px solid #706e6e; border-style: solid; height: 23px;">
-<td dir="rtl" style="width: 17.2591%; height: 23px; border-left: 2px solid #3b3a3a; text-align: center;"><strong style="color: black;">پارامتر</strong></td>
-<td dir="rtl" style="width: 75.1025%; height: 23px; text-align: center;"><strong style="color: black;">توضیحات</strong></td>
-</tr>
-</thead>
-<tbody>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 17.2591%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>array</em></td>
-<td dir="rtl" style="width: 75.1025%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>ضروری.  یک آرایه را مشخص می کند</div>
-</td>
-</tr>
-<tr style="height: 23px; background-color: #dbd7d7;">
-<td style="width: 17.2591%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>preserve</em></td>
-<td dir="rtl" style="width: 75.1025%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>
-<p style="margin-left: 30px;">اختیاری -  مشخص می کند که آیا تابع باید کلیدهای آرایه را حفظ کند یا خیر. مقادیر ممکن:</p>
-<ul style="margin-left: 90px;">
-<li dir="ltr" style="text-align: left;">true</li>
-<li dir="ltr" style="text-align: left;">false</li>
-</ul>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p dir="rtl"><!-- /wp:html -->
-
+<!-- /wp:html -->
+<div dir="rtl" style="text-align: justify;">      اگر یک ماژول در نتیجه یک خطا راه اندازی نشود، بلافاصله با فونت قرمز از این موضوع مطلع خواهید شد. گزارش دقیق خطا می تواند به شما در شناسایی علت مشکل کمک کند.</div>
 <!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"textAlign":"right","level":4} --></p>
-<h3 class="wp-block-heading has-text-align-right"><span class="colored-text">۶. برنامه ای بنویسید که یک عدد را به عنوان ورودی گرفته و مجموع اعداد از ۱ تا آن عدد را پیدا کند. عدد همیشه یک عدد صحیح مثبت بزرگتر از صفر خواهد بود.</span></h3>
-<p dir="rtl"><!-- /wp:heading --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- wp:code {"backgroundColor":"white"} --></p>
-<pre style="direction: ltr;">    summation(2) -&gt; 3
-    1 + 2
-
-    summation(8) -&gt; 36
-    1 + 2 + 3 + 4 + 5 + 6 + 7 + 8</pre>
-<p dir="rtl"><!-- /wp:code -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>پاسخ:</strong></p>
-<p dir="rtl" style="text-align: justify;">مسئله را به دو روش متفاوت حل می کنیم. در روش اول از روابط ساده ریاضی استفاده می کنیم و در روش دوم از توابع <strong>php</strong> استفاده می کنیم.</p>
-<p dir="rtl"><strong>روش اول:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-function summation($c)
-{
-   return ($c * ($c + 1) / 2);
-}
-echo summation(8);</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p class="has-white-background-color has-background"><strong>36</strong></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>روش دوم:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-function summation($c)
-{
-   return array_sum(range(1, $c));
-}
-echo summation(8);</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p class="has-white-background-color has-background"><strong>36</strong></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":3} --></p>
-<h4 class="wp-block-heading has-text-align-right">معرفی تابع ()range :</h4>
-<p dir="rtl"><!-- /wp:heading --></p>
+<!-- wp:heading {"textAlign":"right","level":3,"textColor":"vivid-cyan-blue"} -->
+<h4 class="colored-text">راه اندازی XAMPP</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      یک منبع خطای رایج مرتبط با آپاچی پورت های مسدود شده است. اگر از تنظیمات استاندارد استفاده می کنید، XAMPP وب سرور را به پورت اصلی 80 و پورت SSL 443 اختصاص می دهد.</div>
+<div dir="rtl" style="text-align: justify;">این دومی به ویژه اغلب توسط برنامه های دیگر مسدود می شود. در مثال بالا، به احتمال زیاد پورت Tomcat مسدود شده است، به این معنی که وب سرور نمی تواند راه اندازی شود. سه راه برای حل این مشکل وجود دارد:</div>
+<div dir="rtl"> </div>
 <ul>
-<li dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()range</span></strong> یک آرایه حاوی محدوده ای از عناصر ایجاد می کند.</li>
-<li dir="rtl" style="text-align: justify;">این تابع آرایه ای از عناصر را از کم به زیاد برمی گرداند.</li>
+<li dir="rtl" style="text-align: justify;">
+<div style="text-align: justify;"><strong><span class="colored-text">پورت متناقض را تغییر دهید:</span></strong><br />برای مثال فرض می کنیم که برنامه پیام رسان فوری اسکایپ پورت SSL 443 را مسدود می کند (این یک مشکل رایج است).<br />یکی از راه های مقابله با این مشکل، تغییر تنظیمات پورت اسکایپ است. برای انجام این کار، برنامه را باز کنید و از طریق «Actions»، «Options» و «Advanced» حرکت کنید تا به منوی «Connections» برسید. باید یک کادر علامت‌دار پیدا کنید تا اجازه دسترسی اسکایپ به پورت‌های 80 و 443 را بدهد. اکنون این کادر را لغو انتخاب کنید.</div>
+<div> </div>
+</li>
+<li dir="rtl" style="text-align: justify;"><strong><span class="colored-text">تغییر تنظیمات پورت ماژول XAMPP:</span></strong> روی دکمه Config برای ماژول مورد نظر کلیک کنید و فایل های httpd.conf و httpd-ssl.conf را باز کنید. قبل از ذخیره اطلاعات فایل، پورت شماره 80 را در httpd.conf و پورت شماره 443 را در httpd-ssl.conf با هر پورت رایگان جایگزین کنید. اکنون روی دکمه تنظیمات عمومی در سمت راست کلیک کرده و "Services and Ports Settings" را انتخاب کنید. پورت ها را برای سرور ماژول سفارشی کنید تا تغییرات در فایل های conf را منعکس کند.</li>
 </ul>
-<div dir="rtl" style="text-align: justify;"><strong>نکته:</strong> اگر پارامتر low بالاتر از پارامتر high باشد، آرایه محدوده از زیاد به پایین خواهد بود.</div>
+<ul>
+<li dir="rtl" style="text-align: justify;">
+<div style="text-align: justify;"><strong><span class="colored-text">پایان دادن به برنامه متناقض:</span></strong> ساده ترین راه برای جلوگیری از تداخل پورت در کوتاه مدت، پایان دادن به برنامه تداخلی است (در این مورد اسکایپ). اگر اسکایپ را بعد از اینکه سرورهای ماژول XAMPP از قبل در حال اجرا هستند راه اندازی مجدد کنید، پورت دیگری را انتخاب می کند و مشکل شما حل می شود.</div>
+</li>
+</ul>
+<!-- wp:html -->
+<div style="display: flex; justify-content: center;">
+<div style="width: 600px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/12.png" alt="xampp" /></div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:spacer -->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
+<!-- /wp:spacer -->
+
+<!-- wp:heading {"textAlign":"right","level":3,"textColor":"vivid-cyan-blue"} -->
+<h4 class="colored-text">مدیریت ماژول</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">شما یک گزینه "Admin" در کنترل پنل برای هر ماژول در XAMPP خود دارید.</div>
 <div dir="rtl"> </div>
-<div dir="rtl"><strong>سینتکس:</strong></div>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">range(low, high, step)</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
+<ul>
+<li dir="rtl" style="text-align: justify;">
+<div style="text-align: justify;">روی دکمه Admin سرور آپاچی خود کلیک کنید تا به آدرس وب سرور وب خود بروید. اکنون کنترل پنل در مرورگر استاندارد شما شروع می شود و به داشبورد میزبان محلی XAMPP خود هدایت می شوید. داشبورد دارای لینک‌های متعددی به وب‌سایت‌ها برای اطلاعات مفید و همچنین پروژه متن‌باز BitNami است که برنامه‌های مختلفی را برای XAMPP به شما ارائه می‌دهد، مانند وردپرس یا سایر سیستم‌های مدیریت محتوا. یا می توانید از طریق localhost/dashboard/ به داشبورد دسترسی پیدا کنید.</div>
+</li>
+</ul>
+<!-- wp:spacer -->
 <div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"right"} --></p>
-<p class="has-text-align-right"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- /wp:paragraph -->
-
-<!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-$number = range(0,5);
-  print_r ($number);
-</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;"><code>
- Array
-    (
-    [0] =&gt; 0
-    [1] =&gt; 1
-    [2] =&gt; 2
-    [3] =&gt; 3
-    [4] =&gt; 4
-    [5] =&gt; 5
-    )
-        </code></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer {"height":"63px"} --></p>
-<div class="wp-block-spacer" style="height: 63px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مقادیر پارامتر :</strong></p>
-<table style="color: black; border-collapse: collapse; width: 90.119%; height: 79px;">
-<thead>
-<tr style="background-color: #ffadad; border-bottom: 4px solid #706e6e; border-style: solid; height: 23px;">
-<td dir="rtl" style="width: 19.499%; height: 23px; border-left: 2px solid #3b3a3a; text-align: center;"><strong style="color: black;">پارامتر</strong></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: center;"><strong style="color: black;">توضیحات</strong></td>
-</tr>
-</thead>
-<tbody>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;">low</td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>
-<div>ضروری. کمترین مقدار آرایه را مشخص می کند</div>
-</div>
-</td>
-</tr>
-<tr style="height: 23px; background-color: #dbd7d7;">
-<td style="width: 19.499%; height: 10px; text-align: center; border-left: 2px solid #3b3a3a;"><em>high</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 10px; text-align: justify; padding-right: 40px;">
-<div>
-<div>ضروری. بالاترین مقدار آرایه را مشخص می کند</div>
-</div>
-</td>
-</tr>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>step</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>اختیاری. افزایش استفاده شده در محدوده را مشخص می کند. پیش فرض 1 است</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":3} --></p>
-<h4 class="wp-block-heading has-text-align-right">معرفی تابع ()array_sum :</h4>
-<p dir="rtl"><!-- /wp:heading --></p>
-<div dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()array_sum</span></strong> مجموع تمام مقادیر آرایه را برمی گرداند.</div>
+<!-- /wp:spacer -->
+<div dir="rtl" style="text-align: justify;">      می توانید از دکمه Admin ماژول پایگاه داده خود برای باز کردن <strong><span class="colored-text">phpMyAdmin</span> </strong>استفاده کنید. در اینجا، می توانید پایگاه داده پروژه های وب خود را که روی XAMPP خود آزمایش می کنید، مدیریت کنید. همچنین، می توانید از طریق localhost/phpmyadmin/ به بخش مدیریت پایگاه داده MySQL خود دسترسی پیدا کنید.</div>
 <div dir="rtl"> </div>
-<div dir="rtl"><strong>سینتکس:</strong></div>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">array_sum(array)</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"right"} --></p>
-<p class="has-text-align-right"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- /wp:paragraph -->
-
-<!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-$a=array(5,15,25);
-echo array_sum($a);</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;">45</p>
+<div dir="rtl"> </div>
+<!-- wp:html -->
+<div style="display: flex; justify-content: center;">
+<div style="width: 600px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/13.png" alt="xampp" /></div>
 </div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer {"height":"63px"} --></p>
-<div class="wp-block-spacer" style="height: 63px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مقادیر پارامتر :</strong></p>
-<table style="color: black; border-collapse: collapse; width: 81.5474%; height: 46px;">
-<thead>
-<tr style="background-color: #ffadad; border-bottom: 4px solid #706e6e; border-style: solid; height: 23px;">
-<td dir="rtl" style="width: 19.499%; height: 23px; border-left: 2px solid #3b3a3a; text-align: center;"><strong style="color: black;">پارامتر</strong></td>
-<td dir="rtl" style="width: 58.7279%; height: 23px; text-align: center;"><strong style="color: black;">توضیحات</strong></td>
-</tr>
-</thead>
-<tbody>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>array</em></td>
-<td dir="rtl" style="width: 58.7279%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>
-<div>ضروری. یک آرایه را مشخص می کند</div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p dir="rtl"><!-- /wp:html -->
+<!-- /wp:html -->
 
 <!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
+<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"textAlign":"right","level":4} --></p>
-<h3 class="wp-block-heading has-text-align-right"><span class="colored-text">۷. برنامه ای بنویسید که یک عدد صحیح از ۱ تا ۱۲ را به عنوان ورودی گرفته و مشخص نماید که به کدام فصل سال تعلق دارد. به عنوان مثال ماه ۲ (اردیبهشت) بخشی از سه ماهه اول و ماه ۶ (شهریور) بخشی از سه ماهه دوم سال است.</span></h3>
-<p dir="rtl"><!-- /wp:heading -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>پاسخ:</strong></p>
-<p dir="rtl" style="text-align: justify;">مسئله را به دو روش متفاوت حل می کنیم. در روش اول از <strong><span class="colored-text">if </span></strong> و عملگر <strong><span class="colored-text">or</span></strong> استفاده می کنیم و در روش دوم از تابع <strong><span class="colored-text">()ceil</span></strong> استفاده می کنیم.</p>
-<p dir="rtl"><strong>روش اول:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-function quarterOf($month)
-{
-    if ($month == 1 || $month == 2 || $month == 3) {
-        return 1;
-    }
-    if ($month == 4 || $month == 5 || $month == 6) {
-        return 2;
-    }
-    if ($month == 7 || $month == 8 || $month == 9) {
-        return 3;
-    }
-    if ($month == 10 || $month == 11 || $month == 12) {
-        return 4;
-    } else {
-        return "enter 1-12";
-    }
-}
-echo quarterOf(7);</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p class="has-white-background-color has-background"><strong>3</strong></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>روش دوم:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-function quarterOf($month)
-{
-  return ceil($month / 3);
-}
-echo quarterOf(7);</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p class="has-white-background-color has-background"><strong>3</strong></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":3} --></p>
-<h4 class="wp-block-heading has-text-align-right">معرفی تابع ()ceil :</h4>
-<p dir="rtl"><!-- /wp:heading --></p>
-<div dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()ceil</span></strong> در صورت<br />لزوم یک عدد را تا نزدیکترین عدد صحیح گرد می کند.</div>
-<div dir="rtl">نکته: برای گرد کردن یک عدد DOWN به نزدیکترین عدد صحیح، به تابع ()floor نگاه کنید.</div>
-<div dir="rtl">
-<div>نکته: برای گرد کردن یک عدد ممیز شناور، به تابع ()round نگاه کنید.</div>
-</div>
-<div dir="rtl" style="text-align: justify;"> </div>
-<div dir="rtl"><strong>سینتکس:</strong></div>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">ceil(number);</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"right"} --></p>
-<p class="has-text-align-right"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- /wp:paragraph -->
-
-<!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-echo ceil(0.60) . "\n" ;
-echo ceil(0.40) . "\n" ;
-echo ceil(5) . "\n" ;
-echo ceil(5.1) . "\n" ;
-echo ceil(-5.1) . "\n" ;
-echo ceil(-5.9) . "\n";
-</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;"><code>
-    1
-    1
-    5
-    6
-    -5
-    -5
-        </code></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer {"height":"58px"} --></p>
-<div class="wp-block-spacer" style="height: 58px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مقادیر پارامتر :</strong></p>
-<table style="color: black; border-collapse: collapse; width: 81.5474%; height: 36px;">
-<thead>
-<tr style="background-color: #ffadad; border-bottom: 4px solid #706e6e; height: 23px;">
-<td dir="rtl" style="width: 19.499%; height: 26px; border-left: 2px solid #3b3a3a; text-align: center;">پارامتر</td>
-<td dir="rtl" style="width: 58.7279%; height: 26px; text-align: center;">توضیحات</td>
-</tr>
-</thead>
-<tbody>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 10px; text-align: center; border-left: 2px solid #3b3a3a;">number</td>
-<td dir="rtl" style="width: 58.7279%; height: 10px; text-align: justify; padding-right: 40px;">
-<div>
-<div>
-<p>ضروری. مقدار را برای گرد کردن مشخص می کند</p>
-</div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
-<!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":4} --></p>
-<h3 class="wp-block-heading has-text-align-right"><span class="colored-text">۸. تابعی بنویسید که چهار عمل اصلی ریاضی را انجام دهد.</span></h3>
-<p dir="rtl"><!-- /wp:heading --></p>
-<p dir="rtl" style="text-align: justify;"><strong>توضیحات:</strong></p>
-<p dir="rtl">تابع باید سه پارامتر داشته باشد :</p>
+<!-- wp:heading {"textAlign":"right","level":3,"textColor":"vivid-cyan-blue"} -->
+<h4 class="colored-text">آزمایش نصب XAMPP شما</h4>
+<!-- /wp:heading -->
+<div dir="rtl" style="text-align: justify;">      برای بررسی اینکه آیا سرور آزمایشی شما به درستی نصب و پیکربندی شده است، می توانید یک صفحه آزمایشی PHP ایجاد کنید، آنها را در میزبان محلی XAMPP خود ذخیره کنید و آنها را از طریق مرورگر وب بازیابی کنید.</div>
+<div dir="rtl"> </div>
 <ul>
-<li dir="rtl" style="text-align: justify;">عملیات (رشته/char)</li>
-<li dir="rtl" style="text-align: justify;">value1 (عدد)</li>
-<li dir="rtl" style="text-align: justify;">value2 (عدد)</li>
+<li dir="rtl" style="text-align: justify;">
+<div style="text-align: justify;">دایرکتوری XAMPP را از طریق دکمه "Explorer" در کنترل پنل باز کنید و پوشه htdocs را انتخاب کنید (C:\xampp\htdocs برای نصب های استاندارد). این فهرست اطلاعات فایل جمع آوری شده برای صفحات وب را که روی سرور XAMPP خود آزمایش می کنید ذخیره می کند. پوشه htdocs از قبل باید حاوی داده هایی برای کمک به پیکربندی وب سرور باشد. اما شما باید پروژه های خود را در یک پوشه جدید ذخیره کنید (مثلاً "پوشه test").</div>
+<div> </div>
+</li>
+<li dir="rtl" style="text-align: justify;">کدهای زیر را در ویرایشگر کد نوشته و آن را با نام test.php در پوشه "test" خود (C:\xampp\htdocs\test) ذخیره نمایید.</li>
 </ul>
-<p dir="rtl">تابع باید نتیجه اعداد را پس از اعمال عملیات انتخاب شده برگرداند.</p>
-<p dir="rtl" style="text-align: justify;"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- wp:code {"backgroundColor":"white"} --></p>
-<pre style="direction: ltr;">    ('+', 4, 7) --&gt; 11
-    ('-', 15, 18) --&gt; -3
-    ('*', 5, 5) --&gt; 25
-    ('/', 49, 7) --&gt; 7</pre>
-<p dir="rtl"><!-- /wp:code -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>پاسخ:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-function basicOp($op, $val1, $val2)
-{
-    switch ($op) {
-        case "+":
-            return $val1 + $val2;
-        case "-":
-            return $val1 - $val2;
-        case "*":
-            return $val1 * $val2;
-        case "/":
-            return $val1 / $val2;
-        default:
-            return "no match operator";
-    }
-}
-echo basicOp('*', 4, 7);</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p class="has-white-background-color has-background"><strong>28</strong></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":3} --></p>
-<h4 class="wp-block-heading has-text-align-right">معرفی دستور switch() case :</h4>
-<p dir="rtl"><!-- /wp:heading --></p>
-<p dir="rtl" style="text-align: justify;">دستور <strong><span class="colored-text">switch</span> </strong>برای انجام اقدامات مختلف بر اساس شرایط مختلف استفاده می شود. از دستور <strong><span class="colored-text">switch </span></strong>برای انتخاب یکی از چندین بلوک کد برای اجرا استفاده کنید.</p>
-<p dir="rtl"><strong>سینتکس:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">switch (n) {
-  case label1:
-    code to be executed if n=label1;
-    break;
-  case label2:
-    code to be executed if n=label2;
-    break;
-  case label3:
-    code to be executed if n=label3;
-    break;
-    ...
-  default:
-    code to be executed if n is different from all labels;
-}</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer {"height":"63px"} --></p>
-<div class="wp-block-spacer" style="height: 63px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;">      کار به این صورت است: ابتدا یک عبارت <strong>n </strong>داریم (اغلب یک متغیر)، که یک بار ارزیابی می شود. سپس مقدار عبارت با مقادیر هر مورد در ساختار مقایسه می شود. اگر مطابقت وجود داشته باشد، بلوک کد مرتبط با آن مورد اجرا می شود. برای جلوگیری از اجرای خودکار کد در مورد بعدی از <strong>break</strong> استفاده کنید. اگر مطابقت پیدا نشود از عبارت پیش فرض <strong>default</strong> استفاده می شود.</p>
-<p dir="rtl">
-
-<!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
-<!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":4} --></p>
-<h3 class="wp-block-heading has-text-align-right"><span class="colored-text">۹. یک تابع با دو آرگومان ایجاد کنید که آرایه ای از اولین (n) مضرب های (x) را برمی گرداند.</span></h3>
-<p dir="rtl"><!-- /wp:heading -->
-
-<!-- wp:heading {"textAlign":"right","level":4} --></p>
-<h4 class="wp-block-heading has-text-align-right"><span class="colored-text">فرض کنید هم عدد داده شده و هم تعداد دفعات شمارش اعداد مثبت بزرگتر از 0 باشند. نتایج را به صورت یک آرایه برگردانید.</span></h4>
-<p dir="rtl"><!-- /wp:heading --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- wp:code {"backgroundColor":"white"} --></p>
-<pre style="direction: ltr;">    countBy(1,10) // should return [1,2,3,4,5,6,7,8,9,10]
-    countBy(2,5) // should return [2,4,6,8,10]</pre>
-<p dir="rtl"><!-- /wp:code -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>پاسخ:</strong></p>
-<p dir="rtl">مسئله را به دو روش متفاوت حل می کنیم. در روش اول از حلقه <strong><span class="colored-text">for </span></strong>و در روش دوم از تابع <strong><span class="colored-text">()range</span></strong> استفاده می کنیم.</p>
-<p dir="rtl"><strong>روش اول:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-function countBy($x, $n)
-{
-    for ($i = 0; $i &lt; $n; $i++) {
-       $result[$i] = ($i + 1) * $x;
-    }
-    return $result;
-}
-  print_r(countBy(2, 5));
-</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;"><code>
- Array
-    (
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-    )
-        </code></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>روش دوم:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-function countBy($x, $n)
-{
-   return range($x, $n * $x, $x);
-}
-
-  print_r(countBy(2, 5));
-</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;"><code>
- Array
-    (
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-    )
-        </code></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html --></p>
-<p dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()</span></strong><strong><span class="colored-text">range</span></strong> از توابع <strong>php</strong> است که در تمرینات قبلی معرفی گردید.</p>
-<p dir="rtl">
-
-<!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
-<!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":4} --></p>
-<h3 class="wp-block-heading has-text-align-right"><span class="colored-text">۱۰. h ساعت، m دقیقه و s ثانیه بعد از نیمه شب را نشان می دهد.<br />تابعی بنویسید که زمان از نیمه شب را بر حسب میلی ثانیه برمی گرداند.</span></h3>
-<p dir="rtl"><!-- /wp:heading -->
-
-<!-- wp:spacer {"height":"70px"} --></p>
-<div class="wp-block-spacer" style="height: 70px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- wp:code {"backgroundColor":"white"} --></p>
-<pre style="direction: ltr;">    h = 0
-    m = 1
-    s = 1
-    result = 61000</pre>
-<p dir="rtl"><!-- /wp:code --></p>
-<p dir="rtl" style="text-align: justify;"><strong>محدودیت های ورودی:</strong></p>
-<p dir="rtl"><!-- wp:code {"backgroundColor":"white"} --></p>
-<pre style="direction: ltr;">    0 &lt;= h &lt;= 23
-    0 &lt;= m &lt;= 59
-    0 &lt;= s &lt;= 59</pre>
-<p dir="rtl"><!-- /wp:code -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>پاسخ:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-function past($h, $m, $s)
-{
-    return (($h * 60 * 60) + $m * 60 + $s) * 1000;
-}
-echo(past(2, 8, 20));</pre>
-<p dir="rtl"><!-- /wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>خروجی:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p class="has-white-background-color has-background has-medium-font-size">7700000</p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer -->
-<div class="spacer" aria-hidden="true"></div>
-<!--
-*
-*
-*
-*
-*
--->
-<!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":4} --></p>
-<h3 class="wp-block-heading has-text-align-right"><span class="colored-text">۱۱. تابعی بنویسید که یک پارامتر رشته را می پذیرد و هر کلمه را در رشته معکوس می کند. تمام فضاهای رشته باید حفظ شود.</span></h3>
-<p dir="rtl"><!-- /wp:heading --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- wp:code {"backgroundColor":"white"} --></p>
-<pre style="direction: ltr;">    "This is an example!" ==&gt; "sihT si na !elpmaxe"
-    "double  spaces"      ==&gt; "elbuod  secaps"</pre>
-<p dir="rtl"><!-- /wp:code -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer --></p>
-<p dir="rtl" style="text-align: justify;"><strong>پاسخ:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-function reverse($c): string
-    {
-       return implode(' ', array_reverse(explode(' ', strrev($c)))) ;
-    }
-}
-echo reverse("ehT kciuq nworb xof spmuj revo eht yzal .god");</pre>
-<p dir="rtl"><!-- /wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>خروجی:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p class="has-white-background-color has-background has-medium-font-size">The quick brown fox jumps over the lazy dog.</p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html --></p>
-<p dir="rtl" style="text-align: justify;">در تمرین بالا از سه تابع زیر استفاده کرده ایم:</p>
+<!-- wp:html -->
+<pre style="direction: ltr;">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;PHP-Test&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php echo '&lt;p&gt;Hello World&lt;/p&gt;'; ?&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+<!-- /wp:html -->
 <ul>
-<li dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()strrev</span></strong> یک متن را برعکس می کند.</li>
-<li dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()explode</span></strong> یک متن را به تکه کوچکتر تر به شکل یک آرایه تبدیل می کند.</li>
-<li dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()array_reverse </span></strong>یک آرایه را برعکس میکند.</li>
-<li dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()</span></strong><strong><span class="colored-text">implode</span></strong> یک رشته را از عناصر یک آرایه برمی گرداند.</li>
+<li dir="rtl" style="text-align: justify;">
+<div style="text-align: justify;">آخرین مرحله اکنون این است که مرورگر وب خود را باز کنید و صفحه PHP خود را از طریق localhost/test/test.php بارگیری کنید. اگر در پنجره مرورگر شما عبارت "Hello World" نمایش داده می شود، پس XAMPP خود را با موفقیت نصب و پیکربندی کرده اید.</div>
+</li>
 </ul>
-<p dir="rtl"><!-- wp:spacer --></p>
+<!-- wp:spacer -->
+<div class="wp-block-spacer" style="height: 50px;" aria-hidden="true"> </div>
+<!-- /wp:spacer -->
+<!--
+*
+*
+*
+*
+*
+-->
+<p dir="rtl" style="text-align: justify;">منبع: <a href="https://www.ionos.com/digitalguide/server/tools/xampp-tutorial-create-your-own-local-test-server/">ionos.com</a></p>
+<!-- wp:spacer -->
 <div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":3} --></p>
-<h4 class="wp-block-heading has-text-align-right">معرفی تابع ()strrev :</h4>
-<p dir="rtl"><!-- /wp:heading --></p>
-<p dir="rtl">تابع <strong><span class="colored-text">()</span></strong><strong><span class="colored-text">strrev</span></strong> یک رشته را معکوس می کند.</p>
-<p dir="rtl" style="text-align: justify;"><strong>سینتکس:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">strrev(string)</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"right"} --></p>
-<p class="has-text-align-right"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- /wp:paragraph -->
-
-<!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-echo strrev("Hello World!");</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;">!dlroW olleH</p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer {"height":"68px"} --></p>
-<div class="wp-block-spacer" style="height: 68px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مقادیر پارامتر :</strong></p>
-<table style="color: black; border-collapse: collapse; width: 90.119%; height: 46px;">
-<thead>
-<tr style="background-color: #ffadad; border-bottom: 4px solid #706e6e; border-style: solid; height: 23px;">
-<td dir="rtl" style="width: 19.499%; height: 23px; border-left: 2px solid #3b3a3a; text-align: center;"><strong style="color: black;">پارامتر</strong></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: center;"><strong style="color: black;">توضیحات</strong></td>
-</tr>
-</thead>
-<tbody>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>string</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>
-<div>ضروری. رشته معکوس را مشخص می کند</div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":3} --></p>
-<h4 class="wp-block-heading has-text-align-right">معرفی تابع ()explode :</h4>
-<p dir="rtl"><!-- /wp:heading --></p>
-<p dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()</span></strong> <strong><span class="colored-text">explode</span></strong> یک رشته را به یک آرایه می شکند. توجه: پارامتر <strong>"separator"</strong> نمی تواند یک رشته خالی باشد.<br />توجه: این تابع <strong>binary-safe</strong> است.</p>
-<p dir="rtl" style="text-align: justify;">در PHP، برخی از توابع به عنوان توابع binary-safe علامت گذاری شده اند. این بدان معنی است که توابع به درستی کار می کنند حتی زمانی که داده های باینری را ارسال می کنید.</p>
-<p dir="rtl"><strong>سینتکس:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">explode(separator,string,limit)</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"right"} --></p>
-<p class="has-text-align-right"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- /wp:paragraph -->
-
-<!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-$str = "Hello world. It's a beautiful day.";
-  print_r (explode(" ",$str));
-</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;"><code>
- Array
-    (
-    [0] =&gt; Hello
-    [1] =&gt; world.
-    [2] =&gt; It's
-    [3] =&gt; a
-    [4] =&gt; beautiful
-    [5] =&gt; day.
-    )
-        </code></p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer {"height":"68px"} --></p>
-<div class="wp-block-spacer" style="height: 68px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مقادیر پارامتر :</strong></p>
-<table style="color: black; border-collapse: collapse; width: 90.119%; height: 92px;">
-<thead>
-<tr style="background-color: #ffadad; border-bottom: 4px solid #706e6e; border-style: solid; height: 23px;">
-<td dir="rtl" style="width: 19.499%; height: 23px; border-left: 2px solid #3b3a3a; text-align: center;"><strong style="color: black;">پارامتر</strong></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: center;"><strong style="color: black;">توضیحات</strong></td>
-</tr>
-</thead>
-<tbody>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>separator</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>
-<div>ضروری. محل شکستن رشته را مشخص می کند</div>
-</div>
-</td>
-</tr>
-<tr style="height: 23px; background-color: #dbd7d7;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>string</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>
-<div>ضروری. رشته برای شکافتن</div>
-</div>
-</td>
-</tr>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>limit</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>اختیاری. تعداد عناصر آرایه برای بازگشت را مشخص می کند.</div>
-<ul>
-<li>بزرگتر از 0 - آرایه ای را با حداکثر عنصر(های) حدی برمی گرداند.</li>
-<li>کمتر از 0 - یک آرایه را به جز آخرین -limit عناصر() برمی گرداند.</li>
-<li>0 - آرایه ای با یک عنصر را برمی گرداند.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"right","level":3} --></p>
-<h4 class="wp-block-heading has-text-align-right">معرفی تابع ()implude :</h4>
-<p dir="rtl"><!-- /wp:heading --></p>
-<p dir="rtl" style="text-align: justify;">تابع <strong><span class="colored-text">()</span></strong><strong><span class="colored-text">implode</span></strong> یک رشته را از عناصر یک آرایه برمی گرداند.</p>
-<p dir="rtl" style="text-align: justify;"><strong>توجه:</strong> تابع ()implode پارامترهای خود را به هر ترتیب می پذیرد. با این حال، برای سازگاری با<br />()explode، باید از ترتیب مستند آرگومان ها استفاده کنید.</p>
-<p dir="rtl" style="text-align: justify;"><strong>توجه:</strong> پارامتر جداکننده ()implode اختیاری است. با این حال، توصیه می شود همیشه از دو پارامتر برای سازگاری با عقب استفاده کنید.</p>
-<p dir="rtl" style="text-align: justify;"><strong>توجه:</strong> این تابع binary-safe است.</p>
-<p dir="rtl">در PHP، برخی از توابع به عنوان توابع binary-safe علامت گذاری شده اند. این بدان معنی است که توابع به درستی کار می کنند حتی زمانی که داده های باینری را ارسال می کنید.</p>
-<p dir="rtl"><strong>سینتکس:</strong></p>
-<p dir="rtl"><!-- wp:html --></p>
-<pre style="direction: ltr;">implode(separator,array)</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"right"} --></p>
-<p class="has-text-align-right"><strong>مثال:</strong></p>
-<p dir="rtl"><!-- /wp:paragraph -->
-
-<!-- wp:html --></p>
-<pre style="direction: ltr;">&lt;?php
-$arr = array('Hello','World!','Beautiful','Day!');
-echo implode(" ",$arr)</pre>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:html --></p>
-<div class="flex items-center" dir="ltr">
-<div style="width: 100px;"><img src="https://raiatec.ir/wp-content/uploads/2023/09/flesh.png" alt="flesh" /></div>
-<div class="p-4 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200" style="margin: auto;">
-<p style="direction: ltr; white-space: pre-wrap;">Hello World! Beautiful Day!</p>
-</div>
-</div>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer {"height":"67px"} --></p>
-<div class="wp-block-spacer" style="height: 67px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:html --></p>
-<p dir="rtl" style="text-align: justify;"><strong>مقادیر پارامتر :</strong></p>
-<table style="color: black; border-collapse: collapse; width: 90.119%; height: 92px;">
-<thead>
-<tr style="background-color: #ffadad; border-bottom: 4px solid #706e6e; border-style: solid; height: 23px;">
-<td dir="rtl" style="width: 19.499%; height: 23px; border-left: 2px solid #3b3a3a; text-align: center;"><strong style="color: black;">پارامتر</strong></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: center;"><strong style="color: black;">توضیحات</strong></td>
-</tr>
-</thead>
-<tbody>
-<tr style="height: 23px; background-color: #ebe8e8;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>separator</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>
-<div>اختیاری. مشخص می کند که چه چیزی بین عناصر آرایه قرار گیرد. پیش فرض "" است (یک رشته خالی)</div>
-</div>
-</td>
-</tr>
-<tr style="height: 23px; background-color: #dbd7d7;">
-<td style="width: 19.499%; height: 23px; text-align: center; border-left: 2px solid #3b3a3a;"><em>array</em></td>
-<td dir="rtl" style="width: 68.2391%; height: 23px; text-align: justify; padding-right: 40px;">
-<div>
-<div>ضروری. آرایه ای برای پیوستن به یک رشته</div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p dir="rtl"><!-- /wp:html -->
-
-<!-- wp:spacer --></p>
-<div class="wp-block-spacer" style="height: 100px;" aria-hidden="true"> </div>
-<p dir="rtl"><!-- /wp:spacer -->
-
-<!-- wp:html --></p>
-<div class="flex justify-between mt-8" style="direction: ltr;">
-<div><a style="border-radius: 5px; background-color: #9ca3af; padding: 8px 12px; display: inline-block; width: 150px; text-align: center;" href="https://raiatec.com/%db%b3%db%b2-%d8%aa%d9%85%d8%b1%db%8c%d9%86-php-%d9%82%d8%b3%d9%85%d8%aa-%d8%af%d9%88%d9%85">❮ بعدی</a></div>
-</div>
-<div style="margin-bottom: 150px;"> </div>
-<p dir="rtl"><!-- /wp:html --></p>
+<!-- /wp:spacer -->
