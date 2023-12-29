@@ -6,8 +6,7 @@ I want to Add a Dynamic Sitemap to Next.js Website Using Pages Directory to impr
 
 I have done the following:
 1- In WordPress, I have set the permalink to the post name. It means that the name of the post title is shown in the URL.
-2- I have installed the next.js program on the localhost of my computer, which works correctly.
-3- Using the useApi.js file, I read the post information from the api:
+2- Using the useApi.js file, I read the post information from the api:
 
 // api/useApi.js
 import useSWR from "swr";
@@ -25,7 +24,7 @@ export function usePosts() {
     };
 }
 
-4- My .env.local file is as follows:
+3- My .env.local file is as follows:
 // .env.local
 NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
 
