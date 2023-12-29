@@ -87,6 +87,4 @@ export function usePostBySlug(slug) {
     };
 }
 
-
-
 Thanks.
