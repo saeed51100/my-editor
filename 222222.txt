@@ -1,7 +1,7 @@
 Hello
 I use next.js to display posts on my site.
 The name of my site is raiatec.com, and it reads the post data from the raiatec.ir site through api.
-I want to add postmap to my next.js app to improve SEO.
+I want to add sitemap to my next.js app to improve SEO.
 I am currently writing my code in the localhost, and later I will modify it and transfer it to the host.
 I have written the sitemap.xml.js code as below, but it doesn't work and by running the npm run dev command, the sitemap.xml file is not created for me in the root of the project.
 Please debug my code:
