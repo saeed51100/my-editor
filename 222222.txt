@@ -1,67 +1,13 @@
 Hello
 I use next.js to display posts on my site.
-The name of my site is raiatec.com, and it reads the post data from the raiatec.ir site through api.
-I want to add sitemap to my next.js app to improve SEO.
-I am currently writing my code in the localhost, and later I will modify it and transfer it to the host.
-I have written the sitemap.xml.js code as below, but it doesn't work and by running the npm run dev command, the sitemap.xml file is not created for me in the root of the project.
-Please debug my code:
-
-// pages/sitemap.xml.js
-const API_URL = 'https://raiatec.ir/wp-json/wp/v2';
-
-function generateSiteMap(posts) {
-    return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>http://localhost:3000/</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://localhost:3000/</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    ${posts
-        .map(({ slug }) => {
-            return `
-    <url>
-
-        <loc>${`${API_URL}/${slug}`}</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    `;
-        })
-        .join('')}
-</urlset>
-`;
-}
-
-function SiteMap() {
-    // The content will be rendered as XML and delivered to the browser in getServerSideProps
-}
-
-export async function getServerSideProps({ res }) {
-    // Fetch the posts using the api URL
-    const request = await fetch(`${API_URL}/posts?per_page=100&_embed`);
-    const posts = await request.json();
+The name of my site is raiatec.com, and it reads the post data from the WordPress site raiatec.ir through api.
+I want to Add a Dynamic Sitemap to Next.js Website Using Pages Directory to improve SEO.
 
 
-    const sitemap = generateSiteMap(posts);
-
-    res.setHeader('Content-Type', 'text/xml');
-    res.write(sitemap);
-    res.end();
-
-    return {
-        props: {},
-    };
-}
-
-export default SiteMap;
-
-My useApi.js file is also as follows:
+I have done the following:
+1- In WordPress, I have set the permalink to the post name. It means that the name of the post title is shown in the URL.
+2- I have installed the next.js program on the localhost of my computer, which works correctly.
+3- Using the useApi.js file, I read the post information from the api:
 
 // api/useApi.js
 import useSWR from "swr";
@@ -79,15 +25,9 @@ export function usePosts() {
     };
 }
 
-export function usePostBySlug(slug) {
-    const apiUrl = `${API_URL}/posts?slug=${slug}`;
-    const {data, error} = useSWR(apiUrl, fetcher);
+4- My .env.local file is as follows:
+// .env.local
+NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
 
-    return {
-        post: data && data[0], // Assuming the slug is unique, so we take the first post found
-        isLoading: !error && !data,
-        isError: error
-    };
-}
-
-Thanks.
+Please write the pages/sitemap.xml.js file for me to generate the sitemap for me.
+Thanks
