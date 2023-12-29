@@ -2,63 +2,66 @@ Hello
 I use next.js to display posts on my site.
 The name of my site is raiatec.com, and it reads the post data from the raiatec.ir site through api.
 I want to add postmap to my next.js app to improve SEO.
-It is written in the next.js documentation that you can use the following code to add postmap to your project:
+I am currently writing my code in the localhost, and later I will modify it and transfer it to the host.
+I have written the sitemap.xml.js code as below, but it doesn't work and by running the npm run dev command, the sitemap.xml file is not created for me in the root of the project.
+Please debug my code:
 
-//pages/sitemap.xml.js
-const EXTERNAL_DATA_URL = 'https://jsonplaceholder.typicode.com/posts';
+// pages/sitemap.xml.js
+const API_URL = 'https://raiatec.ir/wp-json/wp/v2';
 
 function generateSiteMap(posts) {
-  return `<?xml version="1.0" encoding="UTF-8"?>
-   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <!--We manually set the two URLs we know already-->
-     <url>
-       <loc>https://jsonplaceholder.typicode.com</loc>
-     </url>
-     <url>
-       <loc>https://jsonplaceholder.typicode.com/guide</loc>
-     </url>
-     ${posts
-       .map(({ id }) => {
-         return `
-       <url>
-           <loc>${`${EXTERNAL_DATA_URL}/${id}`}</loc>
-       </url>
-     `;
-       })
-       .join('')}
-   </urlset>
- `;
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://localhost:3000/</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://localhost:3000/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    ${posts
+        .map(({ slug }) => {
+            return `
+    <url>
+
+        <loc>${`${API_URL}/${slug}`}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    `;
+        })
+        .join('')}
+</urlset>
+`;
 }
 
 function SiteMap() {
-  // getServerSideProps will do the heavy lifting
+    // The content will be rendered as XML and delivered to the browser in getServerSideProps
 }
 
 export async function getServerSideProps({ res }) {
-  // We make an API call to gather the URLs for our site
-  const request = await fetch(EXTERNAL_DATA_URL);
-  const posts = await request.json();
+    // Fetch the posts using the api URL
+    const request = await fetch(`${API_URL}/posts?per_page=100&_embed`);
+    const posts = await request.json();
 
-  // We generate the XML sitemap with the posts data
-  const sitemap = generateSiteMap(posts);
 
-  res.setHeader('Content-Type', 'text/xml');
-  // we send the XML to the browser
-  res.write(sitemap);
-  res.end();
+    const sitemap = generateSiteMap(posts);
 
-  return {
-    props: {},
-  };
+    res.setHeader('Content-Type', 'text/xml');
+    res.write(sitemap);
+    res.end();
+
+    return {
+        props: {},
+    };
 }
 
 export default SiteMap;
 
-Please change the above code according to the needs of my project and add the necessary codes to my project.
-My project codes are as follows:
-
-// .env.local
-NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
+My useApi.js file is also as follows:
 
 // api/useApi.js
 import useSWR from "swr";
