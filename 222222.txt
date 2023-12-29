@@ -1,0 +1,128 @@
+Hello
+I use next.js to display posts on my site.
+The name of my site is raiatec.com, and it reads the post data from the raiatec.ir site through api.
+I want to add postmap to my next.js app to improve SEO.
+It is written in the next.js documentation that you can use the following code to add postmap to your project:
+
+//pages/sitemap.xml.js
+const EXTERNAL_DATA_URL = 'https://jsonplaceholder.typicode.com/posts';
+
+function generateSiteMap(posts) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <!--We manually set the two URLs we know already-->
+     <url>
+       <loc>https://jsonplaceholder.typicode.com</loc>
+     </url>
+     <url>
+       <loc>https://jsonplaceholder.typicode.com/guide</loc>
+     </url>
+     ${posts
+       .map(({ id }) => {
+         return `
+       <url>
+           <loc>${`${EXTERNAL_DATA_URL}/${id}`}</loc>
+       </url>
+     `;
+       })
+       .join('')}
+   </urlset>
+ `;
+}
+
+function SiteMap() {
+  // getServerSideProps will do the heavy lifting
+}
+
+export async function getServerSideProps({ res }) {
+  // We make an API call to gather the URLs for our site
+  const request = await fetch(EXTERNAL_DATA_URL);
+  const posts = await request.json();
+
+  // We generate the XML sitemap with the posts data
+  const sitemap = generateSiteMap(posts);
+
+  res.setHeader('Content-Type', 'text/xml');
+  // we send the XML to the browser
+  res.write(sitemap);
+  res.end();
+
+  return {
+    props: {},
+  };
+}
+
+export default SiteMap;
+
+Please change the above code according to the needs of my project and add the necessary codes to my project.
+My project codes are as follows:
+
+// .env.local
+NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
+
+// api/useApi.js
+// api/usePosts.js
+
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+// Function to fetch post titles
+export function usePosts() {
+    const apiUrl = `${API_URL}/posts?per_page=100&_embed`;
+    const {data, error} = useSWR(apiUrl, fetcher);
+    return {
+        posts: data,
+        isLoading: !error && !data,
+        isError: error
+    };
+}
+
+// Function to fetch a single post by its slug
+export function usePostBySlug(slug) {
+    const apiUrl = `${API_URL}/posts?slug=${slug}`;
+    const {data, error} = useSWR(apiUrl, fetcher);
+
+    return {
+        post: data && data[0], // Assuming the slug is unique, so we take the first post found
+        isLoading: !error && !data,
+        isError: error
+    };
+}
+
+// Function to fetch categories
+export function useCategories() {
+    const apiUrl = `${API_URL}/categories?per_page=50`;
+    const {data, error} = useSWR(apiUrl, fetcher);
+    return {
+        categories: data,
+        isLoading: !error && !data,
+        isError: error
+    };
+}
+
+// Function to fetch search result
+export function useSearch(keyword) {
+    const apiUrl = `${API_URL}/posts?search=${encodeURIComponent(keyword)}`;
+    const {data, error} = useSWR(apiUrl, fetcher);
+
+    return {
+        results: data,
+        isLoading: !error && !data,
+        isError: error
+    };
+}
+
+// Function to fetch posts Grid
+export function usePostsGrid() {
+    const apiUrl = `${API_URL}/posts?per_page=20&_embed&include=7830,7957,8132,8521,5947,3341,2665,1609,2806,1032,946,473`;
+    const {data, error} = useSWR(apiUrl, fetcher);
+    return {
+        posts: data,
+        isLoading: !error && !data,
+        isError: error
+    };
+}
+
+Thanks.
