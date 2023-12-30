@@ -30,5 +30,5 @@ export function usePosts() {
 // .env.local
 NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
 
-Please write the pages/sitemap.xml.js file for me to generate the sitemap for me.
+Please write the pages/sitemap.xml.js file to generate the sitemap for me.
 Thanks
