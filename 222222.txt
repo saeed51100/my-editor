@@ -1,15 +1,11 @@
 Hello
 I use next.js to display posts on my site.
-The name of my site is raiatec.com, and it reads the post data from the WordPress site raiatec.ir through api.
-I want to Add a Dynamic Sitemap to Next.js Website Using Pages Directory to improve SEO.
+My site is a simple blog that I write and publish daily.
+To improve seo, I have written the following code that generates the sitemap dynamically.
+My code works correctly and when I enter raiatec.com/sitemap.xml in the browser, the sitemap information is displayed.
+My purpose of writing this chat is to check if my code that I write below is optimal and I should keep it or if it needs to be changed according to the type of my blog?
+My code is as follows:
 
-
-I have done the following:
-1- In WordPress, I have set the permalink to the post name. It means that the name of the
-post title is shown in the URL as follows:
-raiatec.com/my-post
-
-2- I have written the pages/sitemap.xml.js file to generate sitemap.xml as follows:
 // pages/sitemap.xml.js
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -65,30 +61,8 @@ export async function getServerSideProps({ res }) {
 
 export default SiteMap;
 
-3- Using the useApi.js file, I read the post information from the api:
-
-// api/useApi.js
-import useSWR from "swr";
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
-export function usePosts() {
-    const apiUrl = `${API_URL}/posts?per_page=100&_embed`;
-    const {data, error} = useSWR(apiUrl, fetcher);
-    return {
-        posts: data,
-        isLoading: !error && !data,
-        isError: error
-    };
-}
-
-4- My .env.local file is as follows:
-// .env.local
-NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
-
-5- I executed the "npm run dev" command. My next.js program was executed, but the sitemap.xml file was not created in the root of my project.
-
-Please debug my code.
-What do I need to do to generate the sitemap.xml file for me?
-
+Please answer the following questions:
+1- I have used getServerSideProps in the code above.
+  According to the type of my site, is it better to use getStaticProps to reduce the load on the server, or is getServerSideProps good?
+2- According to the code I provided, the request for the sitemap is sent to the server once in a while, and how does getServerSideProps handle it?
+3- Is the sitemap request sent to the server every time the posts are displayed or is the request sent once a day or once a week and is it better to use the getStaticProps approach or is the current code better with the getServerSideProps approach?
