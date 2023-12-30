@@ -5,7 +5,9 @@ I want to Add a Dynamic Sitemap to Next.js Website Using Pages Directory to impr
 
 
 I have done the following:
-1- In WordPress, I have set the permalink to the post name. It means that the name of the post title is shown in the URL.
+1- In WordPress, I have set the permalink to the post name. It means that the name of the
+post title is shown in the URL as follows:
+raiatec.com/my-post
 2- Using the useApi.js file, I read the post information from the api:
 
 // api/useApi.js
