@@ -8,7 +8,64 @@ I have done the following:
 1- In WordPress, I have set the permalink to the post name. It means that the name of the
 post title is shown in the URL as follows:
 raiatec.com/my-post
-2- Using the useApi.js file, I read the post information from the api:
+
+2- I have written the pages/sitemap.xml.js file to generate sitemap.xml as follows:
+// pages/sitemap.xml.js
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+function generateSiteMap(posts) {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!--Add the static URLs manually-->
+    <url>
+        <loc>https://raiatec.com</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://raiatec.com/about</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    ${posts
+        .map(({ slug }) => {
+            return `
+    <url>
+        <loc>${`https://raiatec.com/${slug}`}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    `;
+        })
+        .join('')}
+</urlset>
+`;
+}
+
+function SiteMap() {
+    // The content will be rendered as XML and delivered to the browser in getServerSideProps
+}
+
+export async function getServerSideProps({ res }) {
+    // Fetch the posts using the api URL
+    const request = await fetch(`${API_URL}/posts?per_page=100&_embed`);
+    const posts = await request.json();
+
+
+    const sitemap = generateSiteMap(posts);
+
+    res.setHeader('Content-Type', 'text/xml');
+    res.write(sitemap);
+    res.end();
+
+    return {
+        props: {},
+    };
+}
+
+export default SiteMap;
+
+3- Using the useApi.js file, I read the post information from the api:
 
 // api/useApi.js
 import useSWR from "swr";
@@ -26,9 +83,12 @@ export function usePosts() {
     };
 }
 
-3- My .env.local file is as follows:
+4- My .env.local file is as follows:
 // .env.local
 NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
 
-Please write the pages/sitemap.xml.js file to generate the sitemap for me.
-Thanks
+5- I executed the "npm run dev" command. My next.js program was executed, but the sitemap.xml file was not created in the root of my project.
+
+Please debug my code.
+What do I need to do to generate the sitemap.xml file for me?
+
