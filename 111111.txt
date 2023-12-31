@@ -6,3 +6,4 @@
 6- هدلس وردپرس *****
 ***** 7- api
 8- getServerSideProps , server side rendering ssr
+https://nextjs.org/learn-pages-router/seo/rendering-and-ranking
