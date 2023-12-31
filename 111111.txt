@@ -5,3 +5,4 @@
 5- داکر
 6- هدلس وردپرس *****
 ***** 7- api
+8- getServerSideProps , server side rendering ssr
