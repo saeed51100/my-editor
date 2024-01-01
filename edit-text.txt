@@ -1,16 +1,22 @@
-لطفا متن زیر را برایم ویرایش کرده و موارد زیر را اصلاح کن :
-1- خوانایی متن
-2- آیین نگارش
-3- دستور زبان فارسی
-4- ترتیب جمله بندی
-
+I have a next.js site and I use the lighthouse in Chrome browser's dev tools to test its performance.
+After running analyze in the mobile section, I received the following message for the text of a paragraph:
 "
-لینوکس یک هسته است
-این یک سوال رایج است که کاربران لینوکس می پرسند. همچنین این سوال رایجی است که در امتحانات و مصاحبه ها پرسیده می شود. در اینجا همه چیزهایی است که باید در مورد آن بدانید.
-آیا هسته است؟ آیا این یک سیستم عامل است؟ چه تفاوتی بین این دو وجود دارد؟
-من به این سوالات در این توضیح سریع پاسخ خواهم داد.
-لینوکس یک سیستم عامل یا هسته است؟
-خب، از نظر فنی، لینوکس فقط یک هسته است، نه یک سیستم عامل. با این حال، اصطلاح لینوکس اغلب به یک سیستم عامل کامل اطلاق می شود که شامل پوسته (مانند bash) و خط فرمان و/یا ابزارهای رابط کاربری گرافیکی برای کنترل سیستم است. اصطلاح فنی صحیح برای این سیستم عامل ،  توزیع لینوکس است. نمونه هایی از توزیع های محبوب لینوکس شامل اوبونتو، رد هت و دبیان است.
-در سال 1991، چیزی که لینوس توروالدز ایجاد کرد فقط هسته بود. حتی امروز هم روی هسته لینوکس کار می کند. او دیگر کد نمی‌نویسد، اما نظارت می‌کند که کدام کد وارد هسته می‌شود.
-
+This is the largest contentful element painted within the viewport.
 "
+What is the problem with my font or text and how should I fix it?
+The font I use is as follows:
+
+// src/global.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: IRANSansXV;
+    src: url('../fonts/IRANSansXV.woff') format('woff-variations'),
+        /* will be the standard and works in Safari now */ url('../fonts/IRANSansXV.woff') format('woff');
+    /* for the other supporting browsers */
+    font-weight: 100 900;
+    font-display: fallback;
+
+}
