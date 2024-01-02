@@ -42,6 +42,50 @@ export default function ListOfPost() {
 }
 
 Mail works correctly and shows the list of posts' titles.
-But the problem is that the above code can only show the number of 100 posts, and in the above code, if I enter a number greater than 100, the program gives an error.
-In other words, the WordPress api, with the above method, returns only 100 posts per page, which is not enough for me, and I want to display more post titles on one page.
-Please change my code so that the post titles are fetched from WordPress with another method that does not have a limit or that their number is large.
+I have a headless WordPress site, the front end is with next.js and the back end is with WordPress.
+I want to show a list of post titles on my site.
+I have done the following:
+1- I have written the .env.local file as follows:
+// .env.local
+  NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
+
+2- The api/useApi.js file is as follows:
+// useApi.js
+// api/useApi.js
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+// Function to fetch post titles
+export function usePosts() {
+     const apiUrl = `${API_URL}/posts?per_page=100&_embed`;
+     const {data, error} = useSWR(apiUrl, fetcher);
+     return {
+         posts: data,
+         isLoading: !error && !data,
+         isError: error
+     };
+}
+
+3- The components/list-of-post.jsx file is as follows:
+// components/list-of-posts.jsx
+import {usePosts} from "api/useApi";
+
+export default function ListOfPost() {
+     const {posts} = usePosts();
+
+     return (
+         <div>
+             {posts.map((post) => (
+                 <p key={post.id}>
+                     {post.title.rendered}
+                 </p>
+             ))}
+         </div>
+     );
+}
+
+Mail works correctly and shows the list of posts' titles.
+But I don't want all the post titles to load at once, instead I want to use the infinite scroll feature. That is, at first, a certain number of, for example, 10 post titles should be loaded, and then when the user scrolls down, more posts should be loaded.
+Please write me its code.
