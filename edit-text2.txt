@@ -1,2 +1,0 @@
-I have a headless WordPress site, the front end is with next.js and the back end is with WordPress.
-I want to check whether to use the @tanstack/react-query library.
