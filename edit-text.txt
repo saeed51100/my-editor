@@ -42,50 +42,6 @@ export default function ListOfPost() {
      );
 }
 
-Mail works correctly and shows the list of posts' titles.
-I have a headless WordPress site, the front end is with next.js and the back end is with WordPress.
-I want to show a list of post titles on my site.
-I have done the following:
-1- I have written the .env.local file as follows:
-// .env.local
-  NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
-
-2- The api/useApi.js file is as follows:
-// useApi.js
-// api/useApi.js
-import useSWR from "swr";
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
-// Function to fetch post titles
-export function usePosts() {
-     const apiUrl = `${API_URL}/posts?per_page=100&_embed`;
-     const {data, error} = useSWR(apiUrl, fetcher);
-     return {
-         posts: data,
-         isLoading: !error && !data,
-         isError: error
-     };
-}
-
-3- The components/list-of-post.jsx file is as follows:
-// components/list-of-posts.jsx
-import {usePosts} from "api/useApi";
-
-export default function ListOfPost() {
-     const {posts} = usePosts();
-
-     return (
-         <div>
-             {posts.map((post) => (
-                 <p key={post.id}>
-                     {post.title.rendered}
-                 </p>
-             ))}
-         </div>
-     );
-}
 
 Mail works correctly and shows the list of posts' titles.
 But I don't want all the post titles to load at once, instead I want to use the infinite scroll feature. That is, at first, a certain number of, for example, 10 post titles should be loaded, and then when the user scrolls down, more posts should be loaded.
