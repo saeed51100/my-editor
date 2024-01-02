@@ -43,5 +43,5 @@ export default function ListOfPost() {
 
 Mail works correctly and shows the list of posts' titles.
 But the problem is that the above code can only show the number of 100 posts, and in the above code, if I enter a number greater than 100, the program gives an error.
-In other words, the WordPress api, with the above method, returns only 100 posts per page, which is not enough for me and I want to display more post titles.
+In other words, the WordPress api, with the above method, returns only 100 posts per page, which is not enough for me, and I want to display more post titles on one page.
 Please change my code so that the post titles are fetched from WordPress with another method that does not have a limit or that their number is large.
