@@ -1,22 +1,48 @@
-I have a next.js site and I use the lighthouse in Chrome browser's dev tools to test its performance.
-After running analyze in the mobile section, I received the following message for the text of a paragraph:
-"
-This is the largest contentful element painted within the viewport.
-"
-What is the problem with my font or text and how should I fix it?
-The font I use is as follows:
+I have a headless WordPress site, the front end is with next.js and the back end is with WordPress.
+I want to show a list of post titles on my site.
+I have done the following:
+1- I have written the .env.local file as follows:
+// .env.local
+  NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
 
-// src/global.css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+2- The api/useApi.js file is as follows:
+// useApi.js
+// api/useApi.js
+import useSWR from "swr";
 
-@font-face {
-    font-family: IRANSansXV;
-    src: url('../fonts/IRANSansXV.woff') format('woff-variations'),
-        /* will be the standard and works in Safari now */ url('../fonts/IRANSansXV.woff') format('woff');
-    /* for the other supporting browsers */
-    font-weight: 100 900;
-    font-display: fallback;
+const fetcher = (url) => fetch(url).then((res) => res.json());
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
+// Function to fetch post titles
+export function usePosts() {
+     const apiUrl = `${API_URL}/posts?per_page=100&_embed`;
+     const {data, error} = useSWR(apiUrl, fetcher);
+     return {
+         posts: data,
+         isLoading: !error && !data,
+         isError: error
+     };
 }
+
+3- The components/list-of-post.jsx file is as follows:
+// components/list-of-posts.jsx
+import {usePosts} from "api/useApi";
+
+export default function ListOfPost() {
+     const {posts} = usePosts();
+
+     return (
+         <div>
+             {posts.map((post) => (
+                 <p key={post.id}>
+                     {post.title.rendered}
+                 </p>
+             ))}
+         </div>
+     );
+}
+
+Mail works correctly and shows the list of posts' titles.
+But the problem is that the above code can only show the number of 100 posts.
+In other words, the WordPress api, with the above method, returns only 100 posts per page, which is not enough for me and I want to display more post titles.
+Please change my code so that the post titles are fetched from WordPress with another method that does not have a limit or that their number is large.
