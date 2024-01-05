@@ -8,3 +8,24 @@ To implement infinite scrolling, I want to use the react-window library and I ha
 1- I have written the .env.local file as follows:
 // .env.local
   NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
+
+2- I have written the useApi.js file to fetch the post titles as follows:
+// api/useApi.js
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+export function usePosts() {
+    const apiUrl = `${API_URL}/posts`;
+    const {data, error} = useSWR(apiUrl, fetcher);
+    return {
+        posts: data,
+        isLoading: !error && !data,
+        isError: error
+    };
+}
+
+3- I have installed react-window.
+
+4-
