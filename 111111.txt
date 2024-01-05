@@ -11,3 +11,5 @@ https://nextjs.org/learn-pages-router/seo/rendering-and-ranking
 10- الگوریتم فلوچارت
 11- تابع پارامتر آرگومان
 12- دستورات پر کاربرد git
+13- callback
+14- import require require once
