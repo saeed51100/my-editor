@@ -2,8 +2,8 @@ Hello
 I have a headless WordPress site, the front end is with next.js and the back end is with WordPress.
 I want to show a list of post titles on my site.
 The WordPress API provides posts with pagination, that is, it provides 10 posts per page by default, and by adding per_page=100&_embed to the endpoint, the maximum limit can be increased to 100 posts.
-But I don't want to get my posts with pagination, instead I want to load posts with infinite scroll feature.
-In other words, I want to cancel the pagination related to the WordPress api and scroll down, all the post titles of my site will be loaded.
+But I don't want to get my posts paginated, instead I want to load and display posts with infinite scroll feature.
+In other words, I want to cancel the pagination related to the WordPress api and scroll down to load all the post titles on my site.
 To implement infinite scrolling, I want to use the react-window library and I have done the following:
 
 1- I have written the .env.local file as follows:
