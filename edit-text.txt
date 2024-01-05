@@ -45,5 +45,5 @@ export default function ListOfPost() {
 
 The program works correctly and shows the list of post titles.
 But I don't want all the post titles to load at once, instead I want to use the infinite scroll feature. That is, at first, a certain number of, for example, 10 post titles should be loaded, and then when the user scrolls down, more posts should be loaded.
-Please write the code for me using the useSWRInfinite.
+Please write the code for me using the react-window library.
 I want the titles to be loaded only by scrolling and without button.
