@@ -28,4 +28,37 @@ export function usePosts() {
 
 3- I have installed react-window.
 
-4-
+4- I have written the list-of-post.jsx file to display the titles of the posts as follows:
+// components/list-of-post.jsx
+import {usePosts} from "../api/useApi";
+import {FixedSizeList as List} from 'react-window';
+
+const Row = ({index, style, posts}) => (
+    <p style={style}>
+        {posts[index].title.rendered}
+    </p>
+);
+
+export default function ListOfPost() {
+    const {posts, isLoading, isError} = usePosts();
+
+    if (isLoading) return <div>Loading...</div>;
+    if (isError) return <div>Error loading posts</div>;
+
+    return (
+        <div>
+            <List
+                className="List"
+                direction="rtl"
+                height={200} // Adjust the height as needed
+                itemCount={posts.length}
+                itemSize={35} // Adjust the itemSize based on your design
+                width={'100%'}
+            >
+                {({index, style}) => (
+                    <Row index={index} style={style} posts={posts}/>
+                )}
+            </List>
+        </div>
+    );
+}
