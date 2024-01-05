@@ -1,78 +1,10 @@
 I have a headless WordPress site, the front end is with next.js and the back end is with WordPress.
 I want to show a list of post titles on my site.
-I have done the following:
+The WordPress API provides posts with pagination, that is, it provides 10 posts per page by default, and by adding per_page=100&_embed to the endpoint, the maximum limit can be increased to 100 posts.
+But I don't want to get my posts with pagination, instead I want to load posts with infinite scroll feature.
+In other words, I want to cancel the pagination related to the WordPress api and scroll down, all the post titles of my site will be loaded.
+To implement infinite scrolling, I want to use the react-window library and I have done the following:
+
 1- I have written the .env.local file as follows:
 // .env.local
   NEXT_PUBLIC_API_URL=https://raiatec.ir/wp-json/wp/v2
-
-2- The api/useApi.js file is as follows:
-// api/useApi.js
-import useSWR from "swr";
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
-// Function to fetch post titles
-export function usePosts() {
-     const apiUrl = `${API_URL}/posts?per_page=100&_embed`;
-     const {data, error} = useSWR(apiUrl, fetcher);
-     return {
-         posts: data,
-         isLoading: !error && !data,
-         isError: error
-     };
-}
-
-3- The components/list-of-post.jsx file is as follows:
-// components/list-of-posts.jsx
-import {usePosts} from "api/useApi";
-
-export default function ListOfPost() {
-     const {posts} = usePosts();
-
-     return (
-         <div>
-             {posts.map((post) => (
-                 <p key={post.id}>
-                     {post.title.rendered}
-                 </p>
-             ))}
-         </div>
-     );
-}
-
-4- I have installed swr and tailwindcss libraries.
-
-The program works correctly and shows the list of post titles.
-But I don't want all the post titles to load at once, instead I want to use the infinite scroll feature. That is, at first, a certain number of, for example, 10 post titles should be loaded, and then when the user scrolls down, more posts should be loaded.
-Please write the code for me using the react-window library.
-In the documentation of the react-window library, the following code is provided for guidance:
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { FixedSizeList as List } from 'react-window';
-
-import './styles.css';
-
-const Row = ({ index, style }) => (
-  <div className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
-    Row {index}
-  </div>
-);
-
-const Example = () => (
-  <List
-    className="List"
-    height={150}
-    itemCount={1000}
-    itemSize={35}
-    width={300}
-  >
-    {Row}
-  </List>
-);
-
-ReactDOM.render(<Example />, document.getElementById('root'));
-
-Please write my project code based on the code above.
-Thanks
