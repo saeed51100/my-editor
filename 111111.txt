@@ -10,3 +10,4 @@ https://nextjs.org/learn-pages-router/seo/rendering-and-ranking
 9- گودال آرامش و shaving
 10- الگوریتم فلوچارت
 11- تابع پارامتر آرگومان
+12- دستورات پر کاربرد git
