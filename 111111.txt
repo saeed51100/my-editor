@@ -13,3 +13,5 @@ https://nextjs.org/learn-pages-router/seo/rendering-and-ranking
 12- دستورات پر کاربرد git
 13- callback
 14- import require require once
+15- آرایه ها در برنامه نویسی
+16- محیط توسعه محیط تولید
