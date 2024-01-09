@@ -18,30 +18,93 @@ npm i @tanstack/react-query react-intersection-observer --save
 
 4- I have written the useApi.js file to fetch the post titles as follows:
 // api/useApi.js
-import { useInfiniteQuery } from '@tanstack/react-query'
-import { useInView } from 'react-intersection-observer'
+import { useInfiniteQuery } from '@tanstack/react-query';
+import { useInView } from 'react-intersection-observer';
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-
+export function usePosts() {
+  return useInfiniteQuery(
+    ['posts'],
+    async ({ pageParam = 1 }) => {
+      const res = await fetch(`${API_URL}/posts?per_page=10&page=${pageParam}&_embed`);
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return res.json();
+    },
+    {
+      getNextPageParam: (lastPage, allPages) => allPages.length + 1,
+    }
+  );
+}
 
 5- I have written the list-of-post.jsx file to display the titles of the posts as follows:
 // components/list-of-post.jsx
-import {usePosts} from "api/useApi";
+import React from 'react';
+import { usePosts } from "../api/useApi"; // Assuming useApi.js is in the api directory and one level up from components.
+import { useInView } from 'react-intersection-observer';
 
 export default function ListOfPost() {
-    const {posts} = usePosts();
+    const {
+        data,
+        fetchNextPage,
+        hasNextPage,
+        isFetchingNextPage,
+        status
+    } = usePosts();
+
+    const { ref, inView } = useInView({
+        threshold: 0,
+    });
+
+    React.useEffect(() => {
+        if (inView && hasNextPage) {
+            fetchNextPage();
+        }
+    }, [inView, fetchNextPage, hasNextPage]);
+
+    if (status === 'loading') {
+        return <p>Loading...</p>;
+    }
+
+    if (status === 'error') {
+        return <p>Error loading posts...</p>;
+    }
 
     return (
-        <div>
-            {posts?.map((post) => (
-                <p key={post.id} className="py-6">
-                    {post.title.rendered}
-                </p>
-            ))}
-        </div>
+      <div>
+          {data.pages.map((group, i) => (
+            <React.Fragment key={i}>
+                {group.map((post) => (
+                  <p key={post.id} className="py-6">
+                      {post.title.rendered}
+                  </p>
+                ))}
+            </React.Fragment>
+          ))}
+          <div ref={hasNextPage ? ref : null}>
+              {isFetchingNextPage ? <p>Loading more...</p> : hasNextPage ? <p>Scroll down to load more</p> : <p>No more posts to load</p>}
+          </div>
+      </div>
     );
 }
 
+And i get this error:
+Server Error
+Error: Bad argument type. Starting with v5, only the "Object" form is allowed when calling query related functions. Please use the error stack to find the culprit call. More info here: https://tanstack.com/query/latest/docs/react/guides/migrating-to-v5#supports-a-single-signature-one-object
 
-Please complete part 4 and modify part 5 so that by scrolling down, all posts are loaded and displayed incrementally.
+This error happened while generating the page. Any console logs will be displayed in the terminal window.
+Source
+api\useApi.js (9:4) @ usePosts
+
+   7 | export function usePosts() {
+   8 | return useInfiniteQuery(
+>  9 |   ['posts'],
+     |  ^
+  10 |   async ({ pageParam = 1 }) => {
+  11 |     const res = await fetch(`${API_URL}/posts?per_page=10&page=${pageParam}&_embed`);
+  12 |     if (!res.ok) {
+
+Please debug my code.
 Thanks
