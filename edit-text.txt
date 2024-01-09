@@ -38,11 +38,7 @@ export function usePosts() {
     };
 }
 
-
-
-
-
-5- I have written the list-of-post.jsx file to display the titles of the posts as follows:
+4- I have written the list-of-post.jsx file to display the titles of the posts as follows:
 // components/list-of-post.jsx
 import {usePosts} from "api/useApi";
 
@@ -60,8 +56,6 @@ export default function ListOfPost() {
     );
 }
 
-Everything works fine and shows the list of posts.
-But the problem is, as I said at the beginning of the chat, it only displays the first 10 posts.
+
 Please modify my code so that by scrolling down, all posts are loaded and displayed incrementally.
-using @tanstack/react-query and react-intersection-observer.
 Thanks
