@@ -12,54 +12,63 @@ To implement infinite scrolling, I want to use the react-window library and I ha
 
 2- I have written the useApi.js file to fetch the post titles as follows:
 // api/useApi.js
-import useSWR from "swr";
+import {useQuery} from '@tanstack/react-query';
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
 export function usePosts() {
-    const apiUrl = `${API_URL}/posts`;
-    const {data, error} = useSWR(apiUrl, fetcher);
+    const fetchPosts = async () => {
+        const response = await fetch(`${API_URL}/posts`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    };
+
+    const {data, error, isLoading, isError} = useQuery({
+        queryKey: ['posts'],
+        queryFn: fetchPosts,
+    });
+
     return {
         posts: data,
-        isLoading: !error && !data,
-        isError: error
+        isLoading,
+        isError: !!error
     };
 }
 
-3- I have installed react-window.
+3- I have written the pages/_app.tsx file as follows so that QueryClientProvider wraps all components:
+   // pages/_app.tsx
+   import type { AppProps } from 'next/app'
+   import "../src/global.css";
+   import Layout from "../components/layout";
+   import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+   const queryClient = new QueryClient();
+
+   export default function MyApp({ Component, pageProps }: AppProps) {
+      return (
+        <QueryClientProvider client={queryClient}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </QueryClientProvider>
+      );
+   }
 
 4- I have written the list-of-post.jsx file to display the titles of the posts as follows:
 // components/list-of-post.jsx
-import {usePosts} from "../api/useApi";
-import {FixedSizeList as List} from 'react-window';
-
-const Row = ({index, style, posts}) => (
-    <p style={style}>
-        {posts[index].title.rendered}
-    </p>
-);
+import {usePosts} from "api/useApi";
 
 export default function ListOfPost() {
-    const {posts, isLoading, isError} = usePosts();
-
-    if (isLoading) return <div>Loading...</div>;
-    if (isError) return <div>Error loading posts</div>;
+    const {posts} = usePosts();
 
     return (
         <div>
-            <List
-                className="List"
-                direction="rtl"
-                height={200} // Adjust the height as needed
-                itemCount={posts.length}
-                itemSize={35} // Adjust the itemSize based on your design
-                width={'100%'}
-            >
-                {({index, style}) => (
-                    <Row index={index} style={style} posts={posts}/>
-                )}
-            </List>
+            {posts?.map((post) => (
+                <p key={post.id} className="py-6">
+                    {post.title.rendered}
+                </p>
+            ))}
         </div>
     );
 }
