@@ -4,7 +4,7 @@ I want to show a list of post titles on my site.
 The WordPress API provides posts with pagination, that is, it provides 10 posts per page by default, and by adding per_page=100&_embed to the endpoint, the maximum limit can be increased to 100 posts.
 But I don't want to get my posts paginated, instead I want to load and display posts with infinite scroll feature.
 In other words, I want to cancel the pagination related to the WordPress api and scroll down to load all the post titles on my site.
-To implement infinite scrolling, I want to use the react-window library and I have done the following:
+To implement infinite scrolling, I am using the @tanstack/react-query library and have done the following:
 
 1- I have written the .env.local file as follows:
 // .env.local
